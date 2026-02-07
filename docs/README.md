@@ -3,8 +3,8 @@ layout: home
 permalink: index.html
 
 # Please update this with your repository name and project title
-repository-name: eYY-co2060-project-template
-title: Project Template
+repository-name: e22-co2060-hydro-risk-management
+title: Integrated Hydrology Risk Management System
 ---
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template, and add more information required for your own project"
@@ -19,14 +19,15 @@ If your followed all the given instructions correctly, your repository will be a
 
 A HTML template integrated with the given GitHub repository templates, based on github.com/cepdnaclk/eYY-project-theme . If you like to remove this default theme and make your own web page, you can remove the file, docs/_config.yml and create the site using HTML. -->
 
-# Project Title
+# Integrated Hydrology Risk Management System
 
 ---
 
 ## Team
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
+-  E/22/182, Dinith Kariyawasam, [email](mailto:e22182@eng.pdn.ac.lk)
+-  E/22/291, Rameesha Prathapasinghe, [email](mailto:e22291@eng.pdn.ac.lk)
+-  E/22/421, Tharindu Weerasinghe, [email](mailto:e22421@eng.pdn.ac.lk)
+-  E/22/449, Gayumi Wimalaweera, [email](mailto:e22449@eng.pdn.ac.lk)
 
 <!-- Image (photo/drawing of the final hardware) should be here -->
 
