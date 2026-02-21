@@ -1,0 +1,3 @@
+[submodule "mqtt-data-ingestion-service"]
+	path = mqtt-data-ingestion-service
+	url = https://github.com/TharinduHimantha/MQTT-Telemetry-Ingestion-Service.git
