@@ -1,3 +1,6 @@
 [submodule "mqtt-data-ingestion-service"]
 	path = mqtt-data-ingestion-service
 	url = https://github.com/TharinduHimantha/MQTT-Telemetry-Ingestion-Service.git
+[submodule "disaster-management-alerting-service"]
+	path = disaster-management-alerting-service
+	url = https://github.com/dinithrk/disaster-management-alerting-service.git
