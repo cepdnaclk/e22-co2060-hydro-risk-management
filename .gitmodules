@@ -4,3 +4,6 @@
 [submodule "disaster-management-alerting-service"]
 	path = disaster-management-alerting-service
 	url = https://github.com/dinithrk/disaster-management-alerting-service.git
+[submodule "metadata-handling-service"]
+	path = metadata-handling-service
+	url = https://github.com/Gayu2003-25/disaster_management_metadata_handling_services.git
