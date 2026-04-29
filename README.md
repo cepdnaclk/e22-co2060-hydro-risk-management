@@ -50,12 +50,16 @@ npm run dev
 
 ## 👥 Team Members (Group 37)
   * Dinith Kariyawasam (E/22/182)
+    
       -e22182@eng.pdn.ac.lk
   * Rameesha Prathapasinghe (E/22/291)
+    
       -e22291@eng.pdn.ac.lk
   * Tharindu Weerasinghe (E/22/421)
+    
       -e22421@eng.pdn.ac.lk
   * Gayumi Wimalaweera (E/22/449)
+    
       -e22449@eng.pdn.ac.lk
 
 **Supervised by: Prof.Kamalanath Samarakoon**
@@ -76,4 +80,4 @@ e22-co2060-hydro-risk-management/
 └── README.md                                      # Project overview
 ```
 📜 License
-Licensed under the MIT License. Created for the CO2060 Software Systems Design module, Department of Computer Engineering, University of Peradeniya.
+Licensed under the [MIT License](LICENSE). Created for the CO2060 Software Systems Design module, Department of Computer Engineering, University of Peradeniya.
