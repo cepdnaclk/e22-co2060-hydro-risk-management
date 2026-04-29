@@ -42,6 +42,9 @@ Navigate to each service folder in ```code/``` and run:
 mvn spring-boot:run
 ```
 
+4. **Access the Application:**
+Navigate to ```http://localhost:8090``` (or your Vite dev port) in your browser.
+
 5. **Run Frontend:**
 ```bash
 cd code/disaster-management-frontend
