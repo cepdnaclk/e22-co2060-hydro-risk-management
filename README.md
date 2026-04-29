@@ -4,7 +4,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![MQTT](https://img.shields.io/badge/MQTT-3C52F0?style=for-the-badge&logo=mqtt&logoColor=white)
 
-<img width="1000" height="500" alt="Image" src="https://github.com/user-attachments/assets/1313d9bf-c826-44d0-a745-d6c4180fd1f6" />
+<img width="800" height="500" alt="Image" src="https://github.com/user-attachments/assets/1313d9bf-c826-44d0-a745-d6c4180fd1f6" />
 
 A comprehensive, microservice-based platform designed for real-time monitoring, analysis, and mitigation of hydrological risks. This system provides disaster management authorities with actionable insights through automated sensor data ingestion, metadata management, and predictive alerting.
 
@@ -61,13 +61,18 @@ npm run dev
 
 ## 📂 Project Structure
 ```Plaintext
-hydro-risk-management/
-├── code/                               # Source code for all microservices
-├── docs/                               # GitHub Pages & Project Portal Metadata
-│   ├── index.json                      # Portal configuration (Team info)
-│   └── _config.yml                     # Page theme settings
-├── additional-files/                   # Research & Specifications
-└── README.md
+e22-co2060-hydro-risk-management/
+├── code/                                 # Centralized source code
+│   ├── disaster-management-alerting-service/  # Notification & Alert logic
+│   ├── metadata-handling-service/             # Core entity & Data API
+│   ├── mqtt-data-ingestion-service/           # Sensor data processing
+│   └── [disaster-management-frontend]/        # React dashboard (if added here)
+├── docs/                                 # GitHub Pages & Portal Metadata
+│   ├── index.json                        # Team & Project info for portal
+│   └── _config.yml                       # Page theme settings
+├── additional-files/                     # Research & Requirements
+├── docker-compose.yml                    # (Reserved for future orchestration)
+└── README.md                             # Project overview
 ```
 📜 License
 Licensed under the MIT License. Created for the CO2060 Software Systems Design module, Department of Computer Engineering, University of Peradeniya.
