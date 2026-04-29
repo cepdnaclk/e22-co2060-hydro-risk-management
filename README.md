@@ -1,57 +1,49 @@
-___
-# DELETE THIS INSTRUCTIONS AND ADD AN INTRODUCTION ABOUT YOUR PROJECT
-___
+🌊 Integrated Hydro Risk Management System
+A comprehensive, microservice-based platform designed for real-time monitoring, analysis, and mitigation of hydrological risks. This system provides disaster management authorities with actionable insights through automated sensor data ingestion, metadata management, and predictive alerting.
 
-# eYY-co2060-project-template
+✨ Core Features
+1. Real-time Alerts Dashboard: A modern, responsive interface for visualizing risk alerts and monitoring trends.
+2. Automated Data Ingestion: Seamless MQTT-based processing of field sensor data.
+3. Metadata Management: Full CRUD interfaces to manage disaster-related entities and configurations.
+4. Microservices Architecture: Decoupled backend services designed for modularity and scalability.
 
-This is a sample repository you can use for your Software Systems Design Project. Once you followed these instructions, remove the text and add a brief introduction to here.
+🏗️ System Architecture
+The system is divided into several specialized modules:
+1. Frontend: Built with React 19 and Vite for the monitoring dashboard.
+2. MQTT Ingestion Service: Processes high-frequency data streams from remote sensors.
+3. Metadata Handling Service: Manages core entities, historical records, and configurations.
+4. Alerting Service: Logic engine for risk assessment and notification broadcasting.
 
-### Enable GitHub Pages
+🚀 Getting Started
+Prerequisites
+Make sure you have the following installed:
+  * Node.js (v18.0.0 or higher)
+  * JDK 17+ & Maven
+  * MQTT Broker (e.g., Mosquitto)
 
-You can put the things to be shown in GitHub pages into the _docs/_ folder. Both html and md file formats are supported. You need to go to settings and enable GitHub pages and select _main_ branch and _docs_ folder from the dropdowns, as shown in the below image.
+Local Installation
+Clone the repository:Bashgit clone <repository-url>
+Run Backend Services: Navigate to each service folder in /code and run:Bashmvn spring-boot:run
+Run Frontend: ```bashcd code/disaster-management-frontendnpm installnpm run dev
 
-![image](https://user-images.githubusercontent.com/11540782/98789936-028d3600-2429-11eb-84be-aaba665fdc75.png)
+👥 Team Members (Group 37)
+  * Dinith Kariyawasam (E/22/182)
+      -e22182@eng.pdn.ac.lk
+  * Rameesha Prathapasinghe (E/22/291)
+      -e22291@eng.pdn.ac.lk
+  * Tharindu Weerasinghe (E/22/421)
+      -e22421@eng.pdn.ac.lk
+  * Gayumi Wimalaweera (E/22/449)
+      -e22449@eng.pdn.ac.lk
+Supervised by: Prof.Kamalanath Samarakoon
 
-### Special Configurations
+📂 Project StructurePlaintexthydro-risk-management/
+├── code/                               # Source code for all microservices
+├── docs/                               # GitHub Pages & Project Portal Metadata
+│   ├── index.json                      # Portal configuration (Team info)
+│   └── _config.yml                     # Page theme settings
+├── additional-files/                   # Research & Specifications
+└── README.md
 
-These projects will be automatically added into [https://projects.ce.pdn.ac.lk](). If you like to show more details about your project on this site, you can fill the parameters in the file, _/docs/index.json_
-
-```
-{
-  "title": "This is the title of the project",
-  "team": [
-    {
-      "name": "Team Member Name 1",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    },
-    {
-      "name": "Team Member Name 2",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    },
-    {
-      "name": "Team Member Name 3",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    }
-  ],
-  "supervisors": [
-    {
-      "name": "Dr. Supervisor 1",
-      "email": "email@eng.pdn.ac.lk"
-    },
-    {
-      "name": "Supervisor 2",
-      "email": "email@eng.pdn.ac.lk"
-    }
-  ],
-  "tags": ["Web", "Software Systems", "CO2060"]
-}
-```
-
-Once you filled this _index.json_ file, please verify the syntax is correct. (You can use [this](https://jsonlint.com/) tool).
-
-### Page Theme
-
-A custom theme integrated with this GitHub Page, which is based on [github.com/cepdnaclk/eYY-project-theme](https://github.com/cepdnaclk/eYY-project-theme). If you like to remove this default theme, you can remove the file, _docs/\_config.yml_ and use HTML based website.
+📜 License
+Licensed under the MIT License. Created for the CO2060 Software Systems Design module, Department of Computer Engineering, University of Peradeniya.
