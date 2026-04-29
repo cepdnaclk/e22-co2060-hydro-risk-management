@@ -1,6 +1,10 @@
 # 🌊 Integrated Hydro Risk Management System
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![MQTT](https://img.shields.io/badge/MQTT-3C52F0?style=for-the-badge&logo=mqtt&logoColor=white)
 
-<img width="1408" height="768" alt="Image" src="https://github.com/user-attachments/assets/1313d9bf-c826-44d0-a745-d6c4180fd1f6" />
+<img width="1000" height="500" alt="Image" src="https://github.com/user-attachments/assets/1313d9bf-c826-44d0-a745-d6c4180fd1f6" />
 
 A comprehensive, microservice-based platform designed for real-time monitoring, analysis, and mitigation of hydrological risks. This system provides disaster management authorities with actionable insights through automated sensor data ingestion, metadata management, and predictive alerting.
 
@@ -25,12 +29,23 @@ Make sure you have the following installed:
   * MQTT Broker (e.g., Mosquitto)
 
 **Local Installation**
-Clone the repository:
-'''Bash
+1. **Clone the repository:**
+```Bash
 git clone <repository-url>
+```
 
-Run Backend Services: Navigate to each service folder in /code and run:Bashmvn spring-boot:run
-Run Frontend: ```bashcd code/disaster-management-frontendnpm installnpm run dev
+3. **Run Backend Services:**
+Navigate to each service folder in ```code/``` and run:
+```Bash
+mvn spring-boot:run
+```
+
+5. **Run Frontend:**
+```bash
+cd code/disaster-management-frontend
+npm install
+npm run dev
+```
 
 ## 👥 Team Members (Group 37)
   * Dinith Kariyawasam (E/22/182)
@@ -43,13 +58,15 @@ Run Frontend: ```bashcd code/disaster-management-frontendnpm installnpm run dev
       -e22449@eng.pdn.ac.lk
 **Supervised by: Prof.Kamalanath Samarakoon**
 
-📂 Project StructurePlaintexthydro-risk-management/
+## 📂 Project Structure
+```Plaintext
+hydro-risk-management/
 ├── code/                               # Source code for all microservices
 ├── docs/                               # GitHub Pages & Project Portal Metadata
 │   ├── index.json                      # Portal configuration (Team info)
 │   └── _config.yml                     # Page theme settings
 ├── additional-files/                   # Research & Specifications
 └── README.md
-
+```
 📜 License
 Licensed under the MIT License. Created for the CO2060 Software Systems Design module, Department of Computer Engineering, University of Peradeniya.
