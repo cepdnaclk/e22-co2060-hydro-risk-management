@@ -10,10 +10,10 @@
 A comprehensive, microservice-based platform designed for real-time monitoring, analysis, and mitigation of hydrological risks. This system provides disaster management authorities with actionable insights through automated sensor data ingestion, metadata management, and predictive alerting.
 
 ## ✨ Core Features
-1. **Real-time Alerts Dashboard**: A modern, responsive interface for visualizing risk alerts and   monitoring trends.
-2. **Automated Data Ingestion**: Seamless MQTT-based processing of field sensor data.
-3. **Metadata Management**: Full CRUD interfaces to manage disaster-related entities and configurations.
-4. **Microservices Architecture**: Decoupled backend services designed for modularity and scalability.
+* **Real-time Alerts Dashboard**: A modern, responsive interface for visualizing risk alerts and   monitoring trends.
+* **Automated Data Ingestion**: Seamless MQTT-based processing of field sensor data.
+* **Metadata Management**: Full CRUD interfaces to manage disaster-related entities and configurations.
+* **Microservices Architecture**: Decoupled backend services designed for modularity and scalability.
 
 ## 🏗️ System Architecture
 The system is divided into several specialized modules:
@@ -50,6 +50,7 @@ npm run dev
 ```
 
 ## 👥 Team Members (Group 37)
+```text
   * Dinith Kariyawasam (E/22/182)
       -e22182@eng.pdn.ac.lk
   * Rameesha Prathapasinghe (E/22/291)
@@ -60,6 +61,7 @@ npm run dev
       -e22449@eng.pdn.ac.lk
 
 **Supervised by: Prof.Kamalanath Samarakoon**
+```
 
 ## 📂 Project Structure
 ```Plaintext
@@ -76,5 +78,5 @@ e22-co2060-hydro-risk-management/
 ├── docker-compose.yml                             # (Reserved for future orchestration)
 └── README.md                                      # Project overview
 ```
-📜 License
+## 📜 License
 Licensed under the [MIT License](LICENSE). Created for the CO2060 Software Systems Design module, Department of Computer Engineering, University of Peradeniya.
