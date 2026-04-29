@@ -33,6 +33,7 @@ Make sure you have the following installed:
 1. **Clone the repository:**
 ```bash
 git clone "https://github.com/cepdnaclk/e22-co2060-hydro-risk-management.git"
+cd hydro-risk-management
 ```
 
 3. **Run Backend Services:**
