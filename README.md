@@ -30,13 +30,13 @@ Make sure you have the following installed:
 
 **Local Installation**
 1. **Clone the repository:**
-```Bash
+```bash
 git clone <repository-url>
 ```
 
 3. **Run Backend Services:**
 Navigate to each service folder in ```code/``` and run:
-```Bash
+```bash
 mvn spring-boot:run
 ```
 
@@ -56,6 +56,7 @@ npm run dev
       -e22421@eng.pdn.ac.lk
   * Gayumi Wimalaweera (E/22/449)
       -e22449@eng.pdn.ac.lk
+
 **Supervised by: Prof.Kamalanath Samarakoon**
 
 ## 📂 Project Structure
