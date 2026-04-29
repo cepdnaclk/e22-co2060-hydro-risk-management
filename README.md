@@ -1,5 +1,7 @@
 # 🌊 Integrated Hydro Risk Management System
 
+<img width="1408" height="768" alt="Image" src="https://github.com/user-attachments/assets/1313d9bf-c826-44d0-a745-d6c4180fd1f6" />
+
 A comprehensive, microservice-based platform designed for real-time monitoring, analysis, and mitigation of hydrological risks. This system provides disaster management authorities with actionable insights through automated sensor data ingestion, metadata management, and predictive alerting.
 
 ## ✨ Core Features
