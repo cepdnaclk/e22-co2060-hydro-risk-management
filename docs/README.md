@@ -22,6 +22,8 @@ A HTML template integrated with the given GitHub repository templates, based on 
 # ATLAS – Adaptive Time-Series Analytics and Logging System  
 ### Domain-Agnostic Government Monitoring Platform
 
+<img width="800" height="472" alt="Image" src="https://github.com/user-attachments/assets/f277d23a-83e9-402c-bb13-f0f0df324c28" />
+
 ---
 
 ## Team
