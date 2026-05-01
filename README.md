@@ -1,4 +1,5 @@
-# 🌊 Integrated Hydro Risk Management System
+# 🌍 ATLAS – Adaptive Time-Series Analytics and Logging System
+### Domain‑Agnostic Government Monitoring Platform
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
@@ -25,6 +26,8 @@ The system is divided into several specialized modules:
 2. **MQTT Ingestion Service**: Processes high-frequency data streams from remote sensors.
 3. **Metadata Handling Service**: Manages core entities, historical records, and configurations.
 4. **Alerting Service**: Logic engine for risk assessment and notification broadcasting.
+5. **Auth Service**: Handles secure login and **Role-Based Access Control (RBAC)**.
+6. **Reporting Service**: A dedicated service for processing historical data into exportable reports.
 
 ## 👥 Team Members (Group 37)
 ```text
