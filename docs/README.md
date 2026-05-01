@@ -102,7 +102,7 @@ The system is designed using a **microservices-based architecture** to ensure sc
 - **Database (PostgreSQL)**  
   Stores metadata, configurations, and historical records  
 
-
+---
 
 ### System Flow
 
