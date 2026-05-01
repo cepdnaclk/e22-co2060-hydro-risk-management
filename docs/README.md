@@ -212,7 +212,7 @@ ATLAS successfully demonstrates a **scalable, modular, and domain-independent mo
 ## Links
 
 - [Project Repository](https://github.com/cepdnaclk/e22-co2060-hydro-risk-management.git)
-- [Project Page](https://github.com/cepdnaclk/e22-co2060-hydro-risk-management/docs/README.md)
+- [Project Page](https://github.com/cepdnaclk/e22-co2060-hydro-risk-management/blob/main/docs/README.md)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
 
