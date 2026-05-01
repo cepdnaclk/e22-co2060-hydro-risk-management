@@ -4,7 +4,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![MQTT](https://img.shields.io/badge/MQTT-3C52F0?style=for-the-badge&logo=mqtt&logoColor=white)
 <p align="center">
-  <img width="800" height="500" alt="readme image" src="https://github.com/user-attachments/assets/f530162c-bb13-4ec5-8f43-3f3bbb46647c" />
+  <img width="800" height="500" alt="readme image" src="https://github.com/user-attachments/assets/e8e19beb-3360-48b2-b968-06bea651055e" />
 </p>
 
 **ATLAS** is a domain‑agnostic monitoring and management platform designed to be adapted by multiple government organizations. While the primary use case is **Integrated Hydro Risk Management**, the system is architected to support any domain requiring real-time measurements, historical analytics, and asset management.
