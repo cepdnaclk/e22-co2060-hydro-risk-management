@@ -4,16 +4,20 @@
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![MQTT](https://img.shields.io/badge/MQTT-3C52F0?style=for-the-badge&logo=mqtt&logoColor=white)
 <p align="center">
-  <img width="800" height="500" alt="Image" src="https://github.com/user-attachments/assets/1313d9bf-c826-44d0-a745-d6c4180fd1f6" />
+  <img width="800" height="500" alt="readme image" src="https://github.com/user-attachments/assets/f530162c-bb13-4ec5-8f43-3f3bbb46647c" />
 </p>
 
-A comprehensive, microservice-based platform designed for real-time monitoring, analysis, and mitigation of hydrological risks. This system provides disaster management authorities with actionable insights through automated sensor data ingestion, metadata management, and predictive alerting.
+**ATLAS** is a domain‑agnostic monitoring and management platform designed to be adapted by multiple government organizations. While the primary use case is **Integrated Hydro Risk Management**, the system is architected to support any domain requiring real-time measurements, historical analytics, and asset management.
 
 ## ✨ Core Features
-* **Real-time Alerts Dashboard**: A modern, responsive interface for visualizing risk alerts and   monitoring trends.
-* **Automated Data Ingestion**: Seamless MQTT-based processing of field sensor data.
-* **Metadata Management**: Full CRUD interfaces to manage disaster-related entities and configurations.
-* **Microservices Architecture**: Decoupled backend services designed for modularity and scalability.
+  * **Real-time Alerts**: A modern, responsive interface for visualizing risk alerts and   monitoring trends.
+  * **Automated Data Ingestion**: Seamless MQTT-based processing of field sensor data.
+  * **Metadata Management**: Full CRUD interfaces to manage disaster-related entities and configurations.
+  * **Microservices Architecture**: Decoupled backend services designed for modularity and scalability.
+    ## To be implemented
+  * **GIS‑Based Dashboard**: Integrated mapping for spatial awareness and real-time visualization of distributed field assets.
+  * **Role-Based Access & Secure Login**: Robust authentication and authorization to ensure data security across different administrative levels.
+  * **Reporting Service**: Automated generation of periodic reports and data summaries for decision-makers.
 
 ## 🏗️ System Architecture
 The system is divided into several specialized modules:
@@ -21,36 +25,6 @@ The system is divided into several specialized modules:
 2. **MQTT Ingestion Service**: Processes high-frequency data streams from remote sensors.
 3. **Metadata Handling Service**: Manages core entities, historical records, and configurations.
 4. **Alerting Service**: Logic engine for risk assessment and notification broadcasting.
-
-## 🚀 Getting Started
-### **Prerequisites**
-Make sure you have the following installed:
-  * Node.js (v18.0.0 or higher)
-  * JDK 17+ & Maven
-  * MQTT Broker (e.g., Mosquitto)
-
-**Local Installation**
-1. **Clone the repository:**
-```bash
-git clone "https://github.com/cepdnaclk/e22-co2060-hydro-risk-management.git"
-cd hydro-risk-management
-```
-
-3. **Run Backend Services:**
-Navigate to each service folder in ```code/``` and run:
-```bash
-mvn spring-boot:run
-```
-
-4. **Access the Application:**
-Navigate to ```http://localhost:8090``` (or your Vite dev port) in your browser.
-
-5. **Run Frontend:**
-```bash
-cd code/disaster-management-frontend
-npm install
-npm run dev
-```
 
 ## 👥 Team Members (Group 37)
 ```text
