@@ -7,3 +7,6 @@
 [submodule "metadata-handling-service"]
 	path = metadata-handling-service
 	url = https://github.com/Gayu2003-25/disaster_management_metadata_handling_services.git
+[submodule "disaster-management-frontend"]
+	path = disaster-management-frontend
+	url = https://github.com/dinithrk/disaster-management-frontend.git
