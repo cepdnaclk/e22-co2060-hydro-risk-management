@@ -29,7 +29,7 @@ The system is divided into several specialized modules:
 5. **Auth Service**: Handles secure login and **Role-Based Access Control (RBAC)**.
 6. **Reporting Service**: A dedicated service for processing historical data into exportable reports.
 
-## 👥 Team Members (Group 37)
+## 👥 Team Members (KernelX)
 ```text
   * Dinith Kariyawasam (E/22/182)
       -e22182@eng.pdn.ac.lk
