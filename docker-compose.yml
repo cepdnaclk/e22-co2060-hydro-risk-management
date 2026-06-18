@@ -6,25 +6,59 @@ services:
     image: timescale/timescaledb:latest-pg14
     container_name: master_timescaledb
     environment:
-      POSTGRES_DB: mqtt_sensor_data
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: kernelx
+      POSTGRES_USER: kernelx
+      POSTGRES_PASSWORD: kernelx
     ports:
       - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
 
-  mqtt-service:
-    build: .
-    container_name: mqtt-subscriber-service
+  metadata-handling-service:
+    build: ./disaster_management_metadata_handling_services
+    container_name: metadata-handling-service
     ports:
-      - "8091:8080"
+      - "8092:8092"
     depends_on:
       - db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/mqtt_sensor_data
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/kernelx
+      SPRING_DATASOURCE_USERNAME: kernelx
+      SPRING_DATASOURCE_PASSWORD: kernelx
+
+  alerting-service:
+    build: ./disaster-management-alerting-service
+    container_name: disaster-management-alerting-service
+    ports:
+      - "8093:8093"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/kernelx
+      SPRING_DATASOURCE_USERNAME: kernelx
+      SPRING_DATASOURCE_PASSWORD: kernelx
+
+  mqtt-service:
+    build: ./mqtt-data-ingestion-service/mqttSubscriber
+    container_name: mqtt-subscriber-service
+    ports:
+      - "8091:8091"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/kernelx
+      SPRING_DATASOURCE_USERNAME: kernelx
+      SPRING_DATASOURCE_PASSWORD: kernelx
+
+  frontend:
+    build: ./disaster-management-frontend
+    container_name: frontend
+    ports:
+      - "8090:80"
+    depends_on:
+      - alerting-service
+      - mqtt-service
+      - metadata-handling-service
 
 volumes:
   db_data:
