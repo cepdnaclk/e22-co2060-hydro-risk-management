@@ -15,6 +15,7 @@ services:
       - db_data:/var/lib/postgresql/data
 
   metadata-handling-service:
+    build: ./metadata-handling-service
     container_name: metadata-handling-service
     ports:
       - "8092:8092"
@@ -26,7 +27,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: kernelx
 
   alerting-service:
-    build: ./alerting-service
+    build: ./disaster-management-alerting-service
     container_name: alerting-service
     ports:
       - "8093:8093"
@@ -50,7 +51,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: kernelx
 
   frontend:
-    build: ./frontend
+    build: ./disaster-management-frontend
     container_name: frontend
     ports:
       - "8090:80"
