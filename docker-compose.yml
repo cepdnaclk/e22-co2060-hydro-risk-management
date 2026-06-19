@@ -15,7 +15,6 @@ services:
       - db_data:/var/lib/postgresql/data
 
   metadata-handling-service:
-    build: ./metadata_handling_services
     container_name: metadata-handling-service
     ports:
       - "8092:8092"
