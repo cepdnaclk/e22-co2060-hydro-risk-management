@@ -13,3 +13,6 @@
 [submodule "disaster-management-frontend"]
     path = disaster-management-frontend
     url = https://github.com/dinithrk/disaster-management-frontend.git
+[submodule "telemetry-data-retrieval-service"]
+	path = telemetry-data-retrieval-service
+	url = https://github.com/TharinduHimantha/Telemetry-Data-Retrieval-Service.git
