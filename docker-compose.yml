@@ -50,9 +50,9 @@ services:
       SPRING_DATASOURCE_USERNAME: kernelx
       SPRING_DATASOURCE_PASSWORD: kernelx
 
-  telemetry-retrieval-service:
-    build: ./telemetry-data-retrieval-service/telemetry-fetcher
-    container_name: telemetry-fetcher-service
+  report-generating-service:
+    build: ./report-generating-service
+    container_name: report-generating-service
     ports:
       - "8094:8094"
     depends_on:
@@ -61,6 +61,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/kernelx
       SPRING_DATASOURCE_USERNAME: kernelx
       SPRING_DATASOURCE_PASSWORD: kernelx
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
 
   frontend:
     build: ./disaster-management-frontend
