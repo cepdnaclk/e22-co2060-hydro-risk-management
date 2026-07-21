@@ -19,3 +19,6 @@
 [submodule "report-generating-service"]
 	path = report-generating-service
 	url = https://github.com/Gayu2003-25/report-generating-service.git
+[submodule "disaster-management-user-service"]
+	path = disaster-management-user-service
+	url = https://github.com/dinithrk/disaster-management-user-service.git
