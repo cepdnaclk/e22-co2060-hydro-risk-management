@@ -1,7 +1,6 @@
 version: "3.8"
 
 services:
-
   db:
     image: timescale/timescaledb:latest-pg14
     container_name: master_timescaledb
@@ -14,6 +13,12 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
 
+  redis:
+    image: redis:latest
+    container_name: redis_cache
+    ports:
+      - "6379:6379"
+
   metadata-handling-service:
     build: ./metadata-handling-service
     container_name: metadata-handling-service
@@ -21,10 +26,13 @@ services:
       - "8092:8092"
     depends_on:
       - db
+      - redis
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/kernelx
       SPRING_DATASOURCE_USERNAME: kernelx
       SPRING_DATASOURCE_PASSWORD: kernelx
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
 
   alerting-service:
     build: ./disaster-management-alerting-service
@@ -63,6 +71,21 @@ services:
       SPRING_DATASOURCE_PASSWORD: kernelx
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
 
+  user-service:
+    build: ./disaster-management-user-service
+    container_name: user-service
+    ports:
+      - "8096:8096"
+    depends_on:
+      - db
+      - redis
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/kernelx
+      SPRING_DATASOURCE_USERNAME: kernelx
+      SPRING_DATASOURCE_PASSWORD: kernelx
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+
   frontend:
     build: ./disaster-management-frontend
     container_name: frontend
@@ -72,6 +95,7 @@ services:
       - alerting-service
       - mqtt-service
       - metadata-handling-service
+      - user-service
 
 volumes:
   db_data:
