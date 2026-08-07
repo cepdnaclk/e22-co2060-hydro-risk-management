@@ -19,3 +19,6 @@
 [submodule "disaster-management-user-service"]
 	path = disaster-management-user-service
 	url = https://github.com/dinithrk/disaster-management-user-service.git
+[submodule "gis-monitoring-service"]
+	path = gis-monitoring-service
+	url = https://github.com/TharinduHimantha/gis-monitoring-service.git
