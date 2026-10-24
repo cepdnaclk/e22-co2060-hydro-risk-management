@@ -229,7 +229,94 @@ sequenceDiagram
 
 ## 🛠️ Tech Stack
 
-<div align="center"> <table> <thead> <tr> <th colspan="2" align="center">Frontend</th> <th colspan="2" align="center"> Backend</th> <th colspan="2" align="center"> Infrastructure</th> </tr> <tr> <th align="left">Component</th><th align="left">Technology</th> <th align="left">Component</th><th align="left">Technology</th> <th align="left">Component</th><th align="left">Technology</th> </tr> </thead> <tbody> <tr> <td><b>Framework</b></td> <td><img src="https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React 19"/> <img src="https://img.shields.io/badge/Vite_7-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite 7"/></td> <td><b>Framework</b></td> <td><img src="https://img.shields.io/badge/Spring_Boot_4.0-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot 4.0"/></td> <td><b>Containerization</b></td> <td><img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"/> <img src="https://img.shields.io/badge/Docker_Compose-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Compose"/></td> </tr> <tr> <td><b>Language</b></td> <td><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/></td> <td><b>Language</b></td> <td><img src="https://img.shields.io/badge/Java_21-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java 21"/></td> <td><b>Web Server</b></td> <td><img src="https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white" alt="Nginx"/> <sub><i>(frontend)</i></sub></td> </tr> <tr> <td><b>UI Library</b></td> <td><img src="https://img.shields.io/badge/Ant_Design_5-0170FE?style=flat-square&logo=antdesign&logoColor=white" alt="Ant Design 5"/></td> <td><b>Database</b></td> <td><img src="https://img.shields.io/badge/PostgreSQL_14-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL 14"/> <img src="https://img.shields.io/badge/TimescaleDB-FDB515?style=flat-square&logo=timescale&logoColor=black" alt="TimescaleDB"/></td> <td><b>Time-series DB</b></td> <td><img src="https://img.shields.io/badge/TimescaleDB-FDB515?style=flat-square&logo=timescale&logoColor=black" alt="TimescaleDB"/> <sub><i>(PostgreSQL extension)</i></sub></td> </tr> <tr> <td><b>Maps</b></td> <td><img src="https://img.shields.io/badge/React_Leaflet-199900?style=flat-square&logo=leaflet&logoColor=white" alt="React Leaflet"/></td> <td><b>Cache</b></td> <td><img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"/></td> <td><b>Message Broker</b></td> <td><img src="https://img.shields.io/badge/HiveMQ_(public)-FFC000?style=flat-square&logo=hivemq&logoColor=black" alt="HiveMQ (public)"/> or any MQTT broker</td> </tr> <tr> <td><b>Charts</b></td> <td><img src="https://img.shields.io/badge/Recharts-22B5BF?style=flat-square&logo=react&logoColor=white" alt="Recharts"/></td> <td><b>Security</b></td> <td><img src="https://img.shields.io/badge/Spring_Security-6DB33F?style=flat-square&logo=springsecurity&logoColor=white" alt="Spring Security"/> <img src="https://img.shields.io/badge/JJWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white" alt="JJWT"/></td> <td></td> <td></td> </tr> <tr> <td><b>HTTP Client</b></td> <td><img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white" alt="Axios"/></td> <td><b>MQTT Client</b></td> <td><img src="https://img.shields.io/badge/Eclipse_Paho-660066?style=flat-square&logo=mqtt&logoColor=white" alt="Eclipse Paho"/></td> <td></td> <td></td> </tr> <tr> <td><b>Routing</b></td> <td><img src="https://img.shields.io/badge/React_Router_7-CA4245?style=flat-square&logo=reactrouter&logoColor=white" alt="React Router 7"/></td> <td><b>PDF Generation</b></td> <td><img src="https://img.shields.io/badge/iText-E34F26?style=flat-square&logo=adobeacrobatreader&logoColor=white" alt="iText"/> <img src="https://img.shields.io/badge/Thymeleaf-005F0F?style=flat-square&logo=thymeleaf&logoColor=white" alt="Thymeleaf"/></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td><b>API Docs</b></td> <td><img src="https://img.shields.io/badge/SpringDoc_OpenAPI-85EA2D?style=flat-square&logo=swagger&logoColor=black" alt="SpringDoc OpenAPI"/></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td><b>Build</b></td> <td><img src="https://img.shields.io/badge/Maven-C71A36?style=flat-square&logo=apachemaven&logoColor=white" alt="Maven"/></td> <td></td> <td></td> </tr> </tbody> </table> </div>
+<div align="center">
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="center">Frontend</th>
+<th colspan="2" align="center">Backend</th>
+<th colspan="2" align="center">Infrastructure</th>
+</tr>
+<tr>
+<th align="left">Component</th>
+<th align="left" width="230">Technology</th>
+<th align="left">Component</th>
+<th align="left" width="230">Technology</th>
+<th align="left">Component</th>
+<th align="left" width="230">Technology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>Framework</b></td>
+<td align="left"><img src="https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React 19"/> <img src="https://img.shields.io/badge/Vite_7-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite 7"/></td>
+<td><b>Framework</b></td>
+<td align="left"><img src="https://img.shields.io/badge/Spring_Boot_4.0-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot 4.0"/></td>
+<td><b>Containerization</b></td>
+<td align="left"><img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"/> <img src="https://img.shields.io/badge/Docker_Compose-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Compose"/></td>
+</tr>
+<tr>
+<td><b>Language</b></td>
+<td align="left"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript"/><br/><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/></td>
+<td><b>Language</b></td>
+<td align="left"><img src="https://img.shields.io/badge/Java_21-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java 21"/></td>
+<td><b>Web Server</b></td>
+<td align="left"><img src="https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white" alt="Nginx"/><br/><sub><i>Frontend</i></sub></td>
+</tr>
+<tr>
+<td><b>UI Library</b></td>
+<td align="left"><img src="https://img.shields.io/badge/Ant_Design_5-0170FE?style=flat-square&logo=antdesign&logoColor=white" alt="Ant Design 5"/></td>
+<td><b>Database</b></td>
+<td align="left"><img src="https://img.shields.io/badge/PostgreSQL_14-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL 14"/><br/><img src="https://img.shields.io/badge/TimescaleDB-FDB515?style=flat-square&logo=timescale&logoColor=black" alt="TimescaleDB"/></td>
+<td><b>Time-series DB</b></td>
+<td align="left"><img src="https://img.shields.io/badge/TimescaleDB-FDB515?style=flat-square&logo=timescale&logoColor=black" alt="TimescaleDB"/><br/><sub><i>PostgreSQL extension</i></sub></td>
+</tr>
+<tr>
+<td><b>Maps</b></td>
+<td align="left"><img src="https://img.shields.io/badge/React_Leaflet-199900?style=flat-square&logo=leaflet&logoColor=white" alt="React Leaflet"/></td>
+<td><b>Cache</b></td>
+<td align="left"><img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"/></td>
+<td><b>Message Broker</b></td>
+<td align="left"><img src="https://img.shields.io/badge/HiveMQ_(public)-FFC000?style=flat-square&logo=hivemq&logoColor=black" alt="HiveMQ (public)"/><br/>or any MQTT broker</td>
+</tr>
+<tr>
+<td><b>Charts</b></td>
+<td align="left"><img src="https://img.shields.io/badge/Recharts-22B5BF?style=flat-square&logo=react&logoColor=white" alt="Recharts"/></td>
+<td><b>Security</b></td>
+<td align="left"><img src="https://img.shields.io/badge/Spring_Security-6DB33F?style=flat-square&logo=springsecurity&logoColor=white" alt="Spring Security"/><br/><img src="https://img.shields.io/badge/JJWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white" alt="JJWT"/></td>
+<td></td><td></td>
+</tr>
+<tr>
+<td><b>HTTP Client</b></td>
+<td align="left"><img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white" alt="Axios"/></td>
+<td><b>MQTT Client</b></td>
+<td align="left"><img src="https://img.shields.io/badge/Eclipse_Paho-660066?style=flat-square&logo=mqtt&logoColor=white" alt="Eclipse Paho"/></td>
+<td></td><td></td>
+</tr>
+<tr>
+<td><b>Routing</b></td>
+<td align="left"><img src="https://img.shields.io/badge/React_Router_7-CA4245?style=flat-square&logo=reactrouter&logoColor=white" alt="React Router 7"/></td>
+<td><b>PDF Generation</b></td>
+<td align="left"><img src="https://img.shields.io/badge/iText-E34F26?style=flat-square&logo=adobeacrobatreader&logoColor=white" alt="iText"/><br/><img src="https://img.shields.io/badge/Thymeleaf-005F0F?style=flat-square&logo=thymeleaf&logoColor=white" alt="Thymeleaf"/></td>
+<td></td><td></td>
+</tr>
+<tr>
+<td></td><td></td>
+<td><b>API Docs</b></td>
+<td align="left"><img src="https://img.shields.io/badge/SpringDoc_OpenAPI-85EA2D?style=flat-square&logo=swagger&logoColor=black" alt="SpringDoc OpenAPI"/></td>
+<td></td><td></td>
+</tr>
+<tr>
+<td></td><td></td>
+<td><b>Build</b></td>
+<td align="left"><img src="https://img.shields.io/badge/Maven-C71A36?style=flat-square&logo=apachemaven&logoColor=white" alt="Maven"/></td>
+<td></td><td></td>
+</tr>
+</tbody>
+</table>
+
+</div>
 
 
 
