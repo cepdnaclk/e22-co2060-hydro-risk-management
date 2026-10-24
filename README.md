@@ -1,149 +1,110 @@
 # 🌍 ATLAS – Adaptive Time-Series Analytics and Logging System
 ### Domain‑Agnostic Government Monitoring Platform
-
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![MQTT](https://img.shields.io/badge/MQTT-3C52F0?style=for-the-badge&logo=mqtt&logoColor=white)
-
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 <p align="center">
   <img width="800" height="500" alt="readme image" src="https://github.com/user-attachments/assets/e8e19beb-3360-48b2-b968-06bea651055e" />
 </p>
 
-<div align="center">
-
-**A domain-agnostic, open-source telemetry monitoring platform**  
-*Built for Integrated Hydro Risk Management — adaptable to any field-sensor domain*
-
-</div>
-
----
-
-**ATLAS** is a domain‑agnostic, microservices-based monitoring and management platform designed to be adapted by multiple government organizations. While the primary use case is **Integrated Hydro Risk Management**, the system is architected to support any domain requiring real-time measurements, historical analytics, and asset management.
+**ATLAS** is a domain‑agnostic monitoring and management platform designed to be adapted by multiple government organizations. While the primary use case is **Integrated Hydro Risk Management**, the system is architected to support any domain requiring real-time measurements, historical analytics, and asset management.
 
 ## ✨ Core Features
-  * **Real-time Alerts**: A modern, responsive interface for visualizing risk alerts and   monitoring trends.
-  * **Automated Data Ingestion**: Seamless MQTT-based processing of field sensor data.
-  * **Metadata Management**: Full CRUD interfaces to manage disaster-related entities and configurations.
-  * **Microservices Architecture**: Decoupled backend services designed for modularity and scalability.
-  * **GIS‑Based Dashboard**: Integrated mapping for spatial awareness and real-time visualization of distributed field assets.
-  * **Role-Based Access & Secure Login**: Robust authentication and authorization to ensure data security across different administrative levels.
-  * **Reporting Service**: Automated generation of periodic reports and data summaries for decision-makers.
-  * **Analytics dashboard**: System status monitoring interactive dashboard with telemetry charts, battery status, and health scores
+
+<div align="center">
+
+| | | |
+|:---:|:---:|:---:|
+|  🚨<br/>**Real-time Alerts**<br/><sub>Responsive interface for visualizing risk alerts and monitoring trends</sub> |  📡<br/>**Automated Data Ingestion**<br/><sub>Seamless MQTT-based processing of field sensor data</sub> |  🗂️<br/>**Metadata Management**<br/><sub>Full CRUD interfaces for disaster-related entities and configurations</sub> |
+|  🧩<br/>**Microservices Architecture**<br/><sub>Decoupled backend services built for modularity and scalability</sub> |  🗺️<br/>**GIS-Based Dashboard**<br/><sub>Integrated mapping for spatial awareness of distributed field assets</sub> |  🔐<br/>**Role-Based Access & Secure Login**<br/><sub>Robust authentication and authorization across administrative levels</sub> |
+|  📄<br/>**Reporting Service**<br/><sub>Automated periodic reports and data summaries for decision-makers</sub> |  📊<br/>**Analytics Dashboard**<br/><sub>Telemetry charts, battery status, and health scores at a glance</sub> |  ⚡<br/>**Domain-Agnostic by Design**<br/><sub>Adapt to any monitoring domain without re-architecting</sub> |
+
+</div><br><br>
+
+  * **Real-time Alerts**: A modern, responsive interface for visualizing risk alerts and   monitoring trends.<br>
+
+  * **Automated Data Ingestion**: Seamless MQTT-based processing of field sensor data.<br>
+
+  * **Metadata Management**: Full CRUD interfaces to manage disaster-related entities and configurations.<br>
+
+  * **Microservices Architecture**: Decoupled backend services designed for modularity and scalability.<br>
+
+  * **GIS‑Based Dashboard**: Integrated mapping for spatial awareness and real-time visualization of distributed field assets.<br>
+
+  * **Role-Based Access & Secure Login**: Robust authentication and authorization to ensure data security across different administrative levels.<br>
+
+  * **Reporting Service**: Automated generation of periodic reports and data summaries for decision-makers.<br>
+  
+  * **Analytics dashboard**: System status monitoring interactive dashboard with telemetry charts, battery status, and health scores<br>
 
 ---
 
 ## 🏗️ System Architecture
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'Inter, Segoe UI, sans-serif','primaryColor':'#e0f2fe','primaryBorderColor':'#0284c7','lineColor':'#64748b','fontSize':'14px'}}}%%
 graph TB
-    subgraph "Data Sources"
-        S1[Temperature Sensor]
-        S2[Water Level Sensor]
-        S3[Rainfall Sensor]
-        S4[Wind Speed Sensor]
-        EMU[Sensor Emulator<br/>Windows / Python]
+    subgraph SRC["📡 DATA SOURCES"]
+        direction LR
+        S1[" Temperature<br/>Sensor"]
+        S2[" Water Level<br/>Sensor"]
+        S3[" Rainfall<br/>Sensor"]
+        S4[" Wind Speed<br/>Sensor"]
+        EMU[" Sensor Emulator<br/>Windows / Python"]
     end
 
-    subgraph "Message Broker"
-        MQTT[☁️ MQTT Broker<br/>broker.hivemq.com<br/>Topic: thw/telemetry/#]
+    subgraph BRK["☁️ MESSAGE BROKER"]
+        MQTT[" MQTT Broker<br/>broker.hivemq.com"]
     end
 
-    subgraph "Backend Microservices"
-        MS1[MQTT Ingestion Service<br/>:8091<br/>Paho Client · Batch Write]
-        MS2[Metadata Service<br/>:8092<br/>Sites · Sensors · Types]
-        MS3[Alerting Service<br/>:8093<br/>Threshold Engine · Cron]
-        MS4[Report Service<br/>:8094<br/>PDF Generation · iText]
-        MS5[User Auth Service<br/>:8096<br/>JWT · RBAC · Redis]
-        MS6[GIS Service<br/>:8097<br/>Map Data · Telemetry API]
+    subgraph SVC["⚙️ BACKEND MICROSERVICES"]
+        direction LR
+        MS1[" MQTT Ingestion<br/><b>:8091</b><br/>Paho · Batch Write"]
+        MS2[" Metadata<br/><b>:8092</b><br/>Sites · Sensors · Types"]
+        MS3[" Alerting<br/><b>:8093</b><br/>Threshold Engine · Cron"]
+        MS4[" Report<br/><b>:8094</b><br/>PDF · iText"]
+        MS5[" User Auth<br/><b>:8096</b><br/>JWT · RBAC"]
+        MS6[" GIS<br/><b>:8097</b><br/>Map Data · Telemetry"]
     end
 
-    subgraph "Data Layer"
-        DB[(TimescaleDB<br/>PostgreSQL :5432<br/>kernelx database)]
-        REDIS[(Redis Cache<br/>:6379<br/>Token Blacklist)]
+    subgraph DAT["🗄️ DATA LAYER"]
+        direction LR
+        DB[(" TimescaleDB<br/>PostgreSQL :5432<br/>kernelx database")]
+        REDIS[(" Redis Cache<br/>:6379<br/>Token Blacklist")]
     end
 
-    subgraph "Frontend"
-        FE[⚛️ React 19 Dashboard<br/>:8090<br/>Ant Design · Leaflet Maps · Recharts]
+    subgraph FRT[" FRONTEND"]
+        FE["⚛️ React 19 Dashboard<br/><b>:8090</b><br/>Ant Design · Leaflet · Recharts"]
     end
 
-    S1 & S2 & S3 & S4 & EMU -->|MQTT Publish| MQTT
-    MQTT -->|Subscribe| MS1
-    MS1 & MS2 & MS3 & MS4 & MS5 & MS6 <-->|JPA / SQL| DB
-    MS5 & MS2 <-->|Token Blacklist| REDIS
-    FE -->|REST API| MS2 & MS3 & MS4 & MS5 & MS6
-```
+    S1 & S2 & S3 & S4 & EMU -->|" Publish"| MQTT
+    MQTT -->|" Subscribe"| MS1
+    MS1 & MS2 & MS3 & MS4 & MS5 & MS6 <-->|"JPA / SQL"| DB
+    MS5 & MS2 <-->|"Token Blacklist"| REDIS
+    FE -->|"REST API"| MS2 & MS3 & MS4 & MS5 & MS6
 
----
+    classDef sensor fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
+    classDef broker fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f
+    classDef service fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
+    classDef alert fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d
+    classDef data fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#4c1d95
+    classDef front fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#831843
 
-## ⚡ Quick Start (5 minutes with Docker)
+    class S1,S2,S3,S4,EMU sensor
+    class MQTT broker
+    class MS1,MS2,MS4,MS5,MS6 service
+    class MS3 alert
+    class DB,REDIS data
+    class FE front
 
-### Prerequisites
-
-| Tool | Version | Install |
-|------|---------|---------|
-| Docker | 24+ | [Get Docker](https://docs.docker.com/get-docker/) |
-| Docker Compose | 2.20+ | Included with Docker Desktop |
-| Git | 2.30+ | [Get Git](https://git-scm.com/downloads) |
-
-### 1. Clone with submodules
-
-```bash
-git clone --recurse-submodules https://github.com/cepdnaclk/e22-co2060-hydro-risk-management.git
-cd e22-co2060-hydro-risk-management
-```
-
-> **Already cloned without submodules?**
-> ```bash
-> git submodule update --init --recursive
-> ```
-
-### 2. Configure environment
-
-```bash
-cp .env.example .env
-# Edit .env with your settings (JWT secret, DB password, etc.)
-```
-
-### 3. Start all services
-
-```bash
-docker compose up --build -d
-```
-
-### 4. Open the dashboard
-
-| Service | URL | Credentials |
-|---------|-----|-------------|
-| 🌐 Frontend Dashboard | http://localhost:8090 | admin / admin123 |
-| 📋 Metadata API Swagger | http://localhost:8092/swagger-ui.html | — |
-| 👤 Auth API Swagger | http://localhost:8096/swagger-ui.html | — |
-
-> **First boot takes ~3–5 minutes** while TimescaleDB initializes. Services will auto-retry connections.
-
-### 5. Send test data (optional)
-
-Use the included sensor emulator to push test readings over MQTT:
-
-```bash
-# Python emulator (cross-platform)
-cd additional-files
-pip install paho-mqtt
-python sensor_emulator.py --sensor-id 1001 --type water-level
-
-# Or use the Windows Forms app: additional-files/SensorEmulator_2YP_WindowsFormsApp.zip
-```
-
----
-
-## 🛑 Stopping & Cleanup
-
-```bash
-# Stop all services (data preserved)
-docker compose down
-
-# Stop and remove all data volumes (fresh start)
-docker compose down -v
+    style SRC fill:#f0fdf4,stroke:#16a34a,stroke-dasharray: 5 5
+    style BRK fill:#fffbeb,stroke:#d97706,stroke-dasharray: 5 5
+    style SVC fill:#eff6ff,stroke:#2563eb,stroke-dasharray: 5 5
+    style DAT fill:#f5f3ff,stroke:#7c3aed,stroke-dasharray: 5 5
+    style FRT fill:#fdf2f8,stroke:#db2777,stroke-dasharray: 5 5
 ```
 
 ---
@@ -151,7 +112,9 @@ docker compose down -v
 ## 🗺️ Data Flow Explained
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'Inter, Segoe UI, sans-serif','actorBkg':'#dbeafe','actorBorder':'#2563eb','actorTextColor':'#1e3a8a','noteBkgColor':'#fef3c7','noteBorderColor':'#d97706','signalColor':'#475569'}}}%%
 sequenceDiagram
+    autonumber
     participant Sensor as Field Sensor
     participant MQTT as MQTT Broker
     participant Ingest as Ingestion Service
@@ -159,21 +122,30 @@ sequenceDiagram
     participant Alert as Alert Engine
     participant FE as Dashboard
 
+    rect rgb(240, 253, 244)
+    Note over Sensor,DB: INGESTION PIPELINE
     Sensor->>MQTT: Publish {deviceId, value, timestamp, battery}
     MQTT->>Ingest: Subscribe callback (QoS 1)
     Ingest->>Ingest: Validate + buffer in ConcurrentQueue
-    Note over Ingest: Batch flush every 8 seconds
+    Note over Ingest:  Batch flush every predetermined seconds
     Ingest->>DB: saveAll(batch)
-    
-    loop Every 1 minute (cron)
+    end
+
+    rect rgb(254, 242, 242)
+    Note over Alert,DB: ALERT EVALUATION
+    loop Every cron cycle
         Alert->>DB: Query readings in last 10-min window
         Alert->>Alert: Compare vs sensor thresholds
         Alert->>DB: Create / Escalate / Resolve alerts
     end
+    end
 
+    rect rgb(253, 242, 248)
+    Note over FE,DB: LIVE DASHBOARD
     FE->>DB: GET /sensors, /latest-all, /alerts/active
     DB-->>FE: Return live data
     FE->>FE: Render dashboard, GIS map, charts
+    end
 ```
 
 
@@ -191,89 +163,12 @@ sequenceDiagram
 | [GIS Service](gis-monitoring-service/) | 8097 | Spring Boot 4, PostgreSQL | Read-only API serving sensor positions and telemetry for the map dashboard |
 | [Frontend](disaster-management-frontend/) | 8090 | React 19, Vite, Ant Design 5, Leaflet, Recharts | Interactive monitoring dashboard with GIS map and analytics |
 
----
-
-## 🚨 Alert System Explained
-
-ATLAS supports **4 severity levels** per sensor, configurable independently:
-
-```mermaid
-graph LR
-    M[📊 Measurement] --> HC{">= High Critical?"}
-    HC -->|Yes| A1[🔴 HIGH_CRITICAL Alert]
-    HC -->|No| HW{">= High Warning?"}
-    HW -->|Yes| A2[🟠 HIGH_WARNING Alert]
-    HW -->|No| LC{"<= Low Critical?"}
-    LC -->|Yes| A3[🔵 LOW_CRITICAL Alert]
-    LC -->|No| LW{"<= Low Warning?"}
-    LW -->|Yes| A4[🟡 LOW_WARNING Alert]
-    LW -->|No| OK[✅ Normal — Resolve any active alert]
-```
-
-**Each sensor defines its own thresholds** (stored in the `sensors` table):
-
-| Field | Example (Water Level) | Meaning |
-|---|---|---|
-| `thresholdHighCritical` | 8.0 m | Immediate danger — flood risk |
-| `thresholdHighWarning` | 6.0 m | Warning — elevated level |
-| `thresholdLowWarning` | 2.0 m | Low — potential drought |
-| `thresholdLowCritical` | 1.0 m | Critical — very low |
-
----
-
-## 🌐 Adapting ATLAS to Your Domain
-
-ATLAS is designed to work for **any domain with field sensors**. Here's how to adapt it:
-
-### Step 1: Register your sensor types
-```bash
-POST http://localhost:8092/api/sensor-types
-{
-  "type": "Air Quality Sensor",
-  "description": "Measures PM2.5 and CO2 levels"
-}
-```
-
-### Step 2: Register your sites and sensors
-```bash
-POST http://localhost:8092/api/sites
-{ "siteName": "City Center Station A", "location": "Colombo", "latitude": 6.9271, "longitude": 79.8612 }
-
-POST http://localhost:8092/api/sensors
-{
-  "sensorId": "AQ-001",
-  "siteId": 1, "sensorTypeId": 1,
-  "thresholdHighCritical": 150, "thresholdHighWarning": 100,
-  "thresholdLowCritical": 0, "thresholdLowWarning": 10,
-  "unitOfMeasure": "µg/m³",
-  "latitude": 6.9271, "longitude": 79.8612
-}
-```
-
-### Step 3: Configure your MQTT topic
-Edit `mqtt-data-ingestion-service/mqttSubscriber/src/main/resources/application.yml`:
-```yaml
-mqtt:
-  broker: tcp://your-broker.com:1883
-  topic: your/telemetry/topic/#   # Change this to match your device topic structure
-```
-
-### Step 4: Publish sensor data
-```json
-{
-  "deviceId": "AQ-001",
-  "value": 87.5,
-  "timestamp": "2025-01-15T10:30:00Z",
-  "sensorHealth": 98,
-  "batteryStatus": 85
-}
-```
-
-That's it — alerts, dashboards, and maps work automatically!
 
 ---
 
 ## ✨ Key Features
+
+![Project Gallery Showcase](docs/images/ATLAS_Dashboard.gif)
 
 <table>
 <tr>
@@ -282,8 +177,8 @@ That's it — alerts, dashboards, and maps work automatically!
 ### 📊 Analytics Dashboard
 - System health score gauge
 - Battery level distribution chart
-- Reading occurrence timeline (scatter)
-- Threshold status breakdown (donut chart)
+- Reading occurrence timeline
+- Threshold status breakdown
 - Sensor table with search, filter, and sort
 - Per-sensor historical trend drawer
 - Auto-refresh every 30 seconds
@@ -305,7 +200,7 @@ That's it — alerts, dashboards, and maps work automatically!
 <td>
 
 ### 🚨 Alerting Engine
-- Cron-based (every 1 minute)
+- Cron-based updates cycle
 - 4-level severity hierarchy
 - Escalation and de-escalation
 - Auto-resolution when normal
@@ -329,52 +224,44 @@ That's it — alerts, dashboards, and maps work automatically!
 
 ---
 
+
 ## 🛠️ Tech Stack
 
 ### Backend
+
 | Component | Technology |
-|-----------|-----------|
-| Framework | Spring Boot 4.0 |
-| Language | Java 21 |
-| Database | PostgreSQL 14 + TimescaleDB |
-| Cache | Redis |
-| Security | Spring Security + JJWT |
-| MQTT Client | Eclipse Paho |
-| PDF Generation | iText + Thymeleaf |
-| API Docs | SpringDoc OpenAPI (Swagger) |
-| Build | Maven |
+|:----------|:-----------|
+| Framework | ![Spring Boot](https://img.shields.io/badge/Spring_Boot_4.0-6DB33F?style=flat-square&logo=springboot&logoColor=white) |
+| Language | ![Java](https://img.shields.io/badge/Java_21-ED8B00?style=flat-square&logo=openjdk&logoColor=white) |
+| Database | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL_14-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![TimescaleDB](https://img.shields.io/badge/TimescaleDB-FDB515?style=flat-square&logo=timescale&logoColor=black) |
+| Cache | ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) |
+| Security | ![Spring Security](https://img.shields.io/badge/Spring_Security-6DB33F?style=flat-square&logo=springsecurity&logoColor=white) ![JWT](https://img.shields.io/badge/JJWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white) |
+| MQTT Client | ![Paho](https://img.shields.io/badge/Eclipse_Paho-660066?style=flat-square&logo=mqtt&logoColor=white) |
+| PDF Generation | ![iText](https://img.shields.io/badge/iText-E34F26?style=flat-square&logo=adobeacrobatreader&logoColor=white) ![Thymeleaf](https://img.shields.io/badge/Thymeleaf-005F0F?style=flat-square&logo=thymeleaf&logoColor=white) |
+| API Docs | ![OpenAPI](https://img.shields.io/badge/SpringDoc_OpenAPI-85EA2D?style=flat-square&logo=swagger&logoColor=black) |
+| Build | ![Maven](https://img.shields.io/badge/Maven-C71A36?style=flat-square&logo=apachemaven&logoColor=white) |
 
 ### Frontend
+
 | Component | Technology |
-|-----------|-----------|
-| Framework | React 19 + Vite 7 |
-| Language | JavaScript + TypeScript |
-| UI Library | Ant Design 5 |
-| Maps | React Leaflet + Leaflet.js |
-| Charts | Recharts |
-| HTTP Client | Axios |
-| Routing | React Router 7 |
+|:----------|:-----------|
+| Framework | ![React](https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB) ![Vite](https://img.shields.io/badge/Vite_7-646CFF?style=flat-square&logo=vite&logoColor=white) |
+| Language | ![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) ![TS](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) |
+| UI Library | ![AntD](https://img.shields.io/badge/Ant_Design_5-0170FE?style=flat-square&logo=antdesign&logoColor=white) |
+| Maps | ![Leaflet](https://img.shields.io/badge/React_Leaflet-199900?style=flat-square&logo=leaflet&logoColor=white) |
+| Charts | ![Recharts](https://img.shields.io/badge/Recharts-22B5BF?style=flat-square&logo=react&logoColor=white) |
+| HTTP Client | ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white) |
+| Routing | ![Router](https://img.shields.io/badge/React_Router_7-CA4245?style=flat-square&logo=reactrouter&logoColor=white) |
 
-### Infrastructure
+###  Infrastructure
+
 | Component | Technology |
-|-----------|-----------|
-| Containerization | Docker + Docker Compose |
-| Web Server | Nginx (frontend) |
-| Time-series DB | TimescaleDB (PostgreSQL extension) |
-| Message Broker | HiveMQ (public) / Any MQTT broker |
+|:----------|:-----------|
+| Containerization | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Compose](https://img.shields.io/badge/Docker_Compose-2496ED?style=flat-square&logo=docker&logoColor=white) |
+| Web Server | ![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white) *(frontend)* |
+| Time-series DB | ![TimescaleDB](https://img.shields.io/badge/TimescaleDB-FDB515?style=flat-square&logo=timescale&logoColor=black) *(PostgreSQL extension)* |
+| Message Broker | ![HiveMQ](https://img.shields.io/badge/HiveMQ_(public)-FFC000?style=flat-square&logo=hivemq&logoColor=black) or any MQTT broker |
 
----
-
-## 📚 Documentation
-
-| Document | Description |
-|----------|-------------|
-| [🏗️ Architecture Guide](docs/ARCHITECTURE.md) | Detailed system design, service internals, and design decisions |
-| [🚀 Deployment Guide](docs/DEPLOYMENT.md) | Docker, manual, and cloud deployment options |
-| [⚙️ Configuration Reference](docs/CONFIGURATION.md) | All environment variables and config options |
-| [📡 API Reference](docs/API_REFERENCE.md) | Complete REST API endpoint documentation |
-| [🤝 Contributing Guide](CONTRIBUTING.md) | How to contribute, coding standards, PR process |
-| [🔒 Security Policy](SECURITY.md) | Reporting vulnerabilities |
 
 ---
 
@@ -394,11 +281,3 @@ That's it — alerts, dashboards, and maps work automatically!
 
 ---
 
-<div align="center">
-
-**⭐ If ATLAS is useful to you, please star the repository!**
-
-
-[🌐 Project Page](https://cepdnaclk.github.io/e22-co2060-hydro-risk-management) · [🐛 Issues](https://github.com/cepdnaclk/e22-co2060-hydro-risk-management/issues) · [📖 Docs](docs/)
-
-</div>
