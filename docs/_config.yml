@@ -1,9 +1,9 @@
 # This theme is based on https://github.com/jekyll/minima
 # Please refer above link to know the available configurations
 
-title: ""
+title: "ATLAS — Adaptive Time-Series Analytics and Logging System"
 remote_theme: cepdnaclk/eYY-project-theme
-description: ""
+description: "Open-source domain-agnostic government monitoring platform for real-time sensor data, automated alerting, and GIS visualization. Built for Integrated Hydro Risk Management."
 markdown: kramdown
 
 kramdown:
