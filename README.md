@@ -22,7 +22,12 @@
 |  🧩<br/>**Microservices Architecture**<br/><sub>Decoupled backend services built for modularity and scalability</sub> |  🗺️<br/>**GIS-Based Dashboard**<br/><sub>Integrated mapping for spatial awareness of distributed field assets</sub> |  🔐<br/>**Role-Based Access & Secure Login**<br/><sub>Robust authentication and authorization across administrative levels</sub> |
 |  📄<br/>**Reporting Service**<br/><sub>Automated periodic reports and data summaries for decision-makers</sub> |  📊<br/>**Analytics Dashboard**<br/><sub>Telemetry charts, battery status, and health scores at a glance</sub> |  ⚡<br/>**Domain-Agnostic by Design**<br/><sub>Adapt to any monitoring domain without re-architecting</sub> |
 
-</div><br><br>
+<br>
+
+![Project Gallery Showcase](docs/images/ATLAS_Dashboard.gif)
+
+
+</div>
 
   * **Real-time Alerts**: A modern, responsive interface for visualizing risk alerts and   monitoring trends.<br>
 
@@ -40,7 +45,94 @@
   
   * **Analytics dashboard**: System status monitoring interactive dashboard with telemetry charts, battery status, and health scores<br>
 
+
+
 ---
+
+## Data Flow within Application
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'Inter, Segoe UI, sans-serif','actorBkg':'#dbeafe','actorBorder':'#2563eb','actorTextColor':'#1e3a8a','noteBkgColor':'#fef3c7','noteBorderColor':'#d97706','signalColor':'#475569'}}}%%
+sequenceDiagram
+    autonumber
+    participant Sensor as Field Sensor
+    participant MQTT as MQTT Broker
+    participant Ingest as Ingestion Service
+    participant DB as TimescaleDB
+    participant Alert as Alert Engine
+    participant FE as Dashboard
+
+    rect rgb(240, 253, 244)
+    Note over Sensor,DB: INGESTION PIPELINE
+    Sensor->>MQTT: Publish {deviceId, value, timestamp, battery}
+    MQTT->>Ingest: Subscribe callback (QoS 1)
+    Ingest->>Ingest: Validate + buffer in ConcurrentQueue
+    Note over Ingest:  Batch flush every predetermined seconds
+    Ingest->>DB: saveAll(batch)
+    end
+
+    rect rgb(254, 242, 242)
+    Note over Alert,DB: ALERT EVALUATION
+    loop Every cron cycle
+        Alert->>DB: Query readings in last 10-min window
+        Alert->>Alert: Compare vs sensor thresholds
+        Alert->>DB: Create / Escalate / Resolve alerts
+    end
+    end
+
+    rect rgb(253, 242, 248)
+    Note over FE,DB: LIVE DASHBOARD
+    FE->>DB: GET /sensors, /latest-all, /alerts/active
+    DB-->>FE: Return live data
+    FE->>FE: Render dashboard, GIS map, charts
+    end
+```
+
+---
+
+## 📁 Repository Structure
+
+```
+e22-co2060-hydro-risk-management/          ← Main orchestration repo
+│
+├──  README.md                           ← You are here
+├──  docker-compose.yml                  ← One-command full-stack launch
+├──  .env.example                        ← Environment variable template
+├──  LICENSE                             ← MIT License
+├──  CONTRIBUTING.md                     ← Contribution guide
+├──  SECURITY.md                         ← Security policy
+├──  CHANGELOG.md                        ← Version history
+│
+├──  .github/
+│   ├──  ISSUE_TEMPLATE/                 ← Bug report & feature request forms
+│   ├──  PULL_REQUEST_TEMPLATE.md        ← PR checklist
+│   └──  workflows/ci.yml               ← GitHub Actions CI pipeline
+│
+├──  docs/
+│   ├──  ARCHITECTURE.md                 ← Deep-dive system design & diagrams
+│   ├──  DEPLOYMENT.md                   ← Docker, manual & cloud deployment
+│   ├──  CONFIGURATION.md                ← All environment & config options
+│   ├──  API_REFERENCE.md               ← REST API documentation
+│   └──  PROJECT_GUIDE.md               ← Quick start & feature guide
+│
+├──  additional-files/
+│   ├──  SensorEmulator_*.zip            ← Windows MQTT test publisher
+│   └──  progress_report_generator.py   ← Utility script
+│
+│   ── Git Submodules (each an independent repo) ──────────────────
+│
+├──  mqtt-data-ingestion-service/        ← MQTT subscriber + TimescaleDB writer
+├──  metadata-handling-service/          ← Sites, Sensors, SensorTypes CRUD
+├──  disaster-management-alerting-service/ ← Threshold alert engine
+├──  report-generating-service/          ← PDF report generation
+├──  disaster-management-user-service/   ← Auth, JWT, RBAC
+├──  gis-monitoring-service/             ← GIS & telemetry read API
+└──  disaster-management-frontend/       ← React 19 dashboard (Vite + Nginx)
+```
+---
+
+
+
 
 ## 🏗️ System Architecture
 
@@ -109,94 +201,8 @@ graph TB
   
 ```
 
----
 
-## 📁 Repository Structure
-
-```
-e22-co2060-hydro-risk-management/          ← Main orchestration repo
-│
-├──  README.md                           ← You are here
-├──  docker-compose.yml                  ← One-command full-stack launch
-├──  .env.example                        ← Environment variable template
-├──  LICENSE                             ← MIT License
-├──  CONTRIBUTING.md                     ← Contribution guide
-├──  SECURITY.md                         ← Security policy
-├──  CHANGELOG.md                        ← Version history
-│
-├──  .github/
-│   ├──  ISSUE_TEMPLATE/                 ← Bug report & feature request forms
-│   ├──  PULL_REQUEST_TEMPLATE.md        ← PR checklist
-│   └──  workflows/ci.yml               ← GitHub Actions CI pipeline
-│
-├──  docs/
-│   ├──  ARCHITECTURE.md                 ← Deep-dive system design & diagrams
-│   ├──  DEPLOYMENT.md                   ← Docker, manual & cloud deployment
-│   ├──  CONFIGURATION.md                ← All environment & config options
-│   ├──  API_REFERENCE.md               ← REST API documentation
-│   └──  PROJECT_GUIDE.md               ← Quick start & feature guide
-│
-├──  additional-files/
-│   ├──  SensorEmulator_*.zip            ← Windows MQTT test publisher
-│   └──  progress_report_generator.py   ← Utility script
-│
-│   ── Git Submodules (each an independent repo) ──────────────────
-│
-├──  mqtt-data-ingestion-service/        ← MQTT subscriber + TimescaleDB writer
-├──  metadata-handling-service/          ← Sites, Sensors, SensorTypes CRUD
-├──  disaster-management-alerting-service/ ← Threshold alert engine
-├──  report-generating-service/          ← PDF report generation
-├──  disaster-management-user-service/   ← Auth, JWT, RBAC
-├──  gis-monitoring-service/             ← GIS & telemetry read API
-└──  disaster-management-frontend/       ← React 19 dashboard (Vite + Nginx)
-```
-
-
----
-
-## 🗺️ Data Flow Explained
-
-```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'Inter, Segoe UI, sans-serif','actorBkg':'#dbeafe','actorBorder':'#2563eb','actorTextColor':'#1e3a8a','noteBkgColor':'#fef3c7','noteBorderColor':'#d97706','signalColor':'#475569'}}}%%
-sequenceDiagram
-    autonumber
-    participant Sensor as Field Sensor
-    participant MQTT as MQTT Broker
-    participant Ingest as Ingestion Service
-    participant DB as TimescaleDB
-    participant Alert as Alert Engine
-    participant FE as Dashboard
-
-    rect rgb(240, 253, 244)
-    Note over Sensor,DB: INGESTION PIPELINE
-    Sensor->>MQTT: Publish {deviceId, value, timestamp, battery}
-    MQTT->>Ingest: Subscribe callback (QoS 1)
-    Ingest->>Ingest: Validate + buffer in ConcurrentQueue
-    Note over Ingest:  Batch flush every predetermined seconds
-    Ingest->>DB: saveAll(batch)
-    end
-
-    rect rgb(254, 242, 242)
-    Note over Alert,DB: ALERT EVALUATION
-    loop Every cron cycle
-        Alert->>DB: Query readings in last 10-min window
-        Alert->>Alert: Compare vs sensor thresholds
-        Alert->>DB: Create / Escalate / Resolve alerts
-    end
-    end
-
-    rect rgb(253, 242, 248)
-    Note over FE,DB: LIVE DASHBOARD
-    FE->>DB: GET /sensors, /latest-all, /alerts/active
-    DB-->>FE: Return live data
-    FE->>FE: Render dashboard, GIS map, charts
-    end
-```
-
-
----
-
-## 🔧 Service Reference
+### Service Reference
 
 | Service | Port | Tech Stack | Description |
 |---------|------|-----------|-------------|
@@ -208,68 +214,9 @@ sequenceDiagram
 | [GIS Service](gis-monitoring-service/) | 8097 | Spring Boot 4, PostgreSQL | Read-only API serving sensor positions and telemetry for the map dashboard |
 | [Frontend](disaster-management-frontend/) | 8090 | React 19, Vite, Ant Design 5, Leaflet, Recharts | Interactive monitoring dashboard with GIS map and analytics |
 
----
+<br>
 
-## ✨ Key Features
-
-![Project Gallery Showcase](docs/images/ATLAS_Dashboard.gif)
-
-<table>
-<tr>
-<td width="50%">
-
-### 📊 Analytics Dashboard
-- System health score gauge
-- Battery level distribution chart
-- Reading occurrence timeline
-- Threshold status breakdown
-- Sensor table with search, filter, and sort
-- Per-sensor historical trend drawer
-- Auto-refresh every 30 seconds
-
-</td>
-<td width="50%">
-
-### 🗺️ GIS Map Dashboard
-- Interactive Leaflet map (OpenStreetMap)
-- Color-coded sensor markers by alert severity
-- Animated pulse effect on active alerts
-- Sensor search autocomplete
-- Fly-to animation on sensor selection
-- Detail drawer with telemetry chart
-
-</td>
-</tr>
-<tr>
-<td>
-
-### 🚨 Alerting Engine
-- Cron-based updates cycle
-- 4-level severity hierarchy
-- Escalation and de-escalation
-- Auto-resolution when normal
-- Configurable alert retention
-- Sliding time-window evaluation
-
-</td>
-<td>
-
-### 🔐 Security
-- JWT access tokens (15 min)
-- Refresh tokens (1 day, HttpOnly cookie)
-- Redis-backed token blacklisting
-- Role-based access (ADMIN / USER)
-- Auto token refresh on 401
-- Seeded admin account on first boot
-
-</td>
-</tr>
-</table>
-
----
-
-
-## 🛠️ Tech Stack
+### Tech Stack
 
 <div align="center">
 
@@ -360,11 +307,67 @@ sequenceDiagram
 
 </div>
 
+---
 
+## ✨ Key Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 📊 Analytics Dashboard
+- System health score gauge
+- Battery level distribution chart
+- Reading occurrence timeline
+- Threshold status breakdown
+- Sensor table with search, filter, and sort
+- Per-sensor historical trend drawer
+- Auto-refresh every 30 seconds
+
+</td>
+<td width="50%">
+
+### 🗺️ GIS Map Dashboard
+- Interactive Leaflet map (OpenStreetMap)
+- Color-coded sensor markers by alert severity
+- Animated pulse effect on active alerts
+- Sensor search autocomplete
+- Fly-to animation on sensor selection
+- Detail drawer with telemetry chart
+
+</td>
+</tr>
+<tr>
+<td>
+
+### 🚨 Alerting Engine
+- Cron-based updates cycle
+- 4-level severity hierarchy
+- Escalation and de-escalation
+- Auto-resolution when normal
+- Configurable alert retention
+- Sliding time-window evaluation
+
+</td>
+<td>
+
+### 🔐 Security
+- JWT access tokens (15 min)
+- Refresh tokens (1 day, HttpOnly cookie)
+- Redis-backed token blacklisting
+- Role-based access (ADMIN / USER)
+- Auto token refresh on 401
+- Seeded admin account on first boot
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 👥 Team — KernelX
+
+
+## 👥 Team - KernelX
 
 | Member | ID | Contact |
 |--------|----|---------|
