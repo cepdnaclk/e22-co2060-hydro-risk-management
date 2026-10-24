@@ -111,6 +111,49 @@ graph TB
 
 ---
 
+## 📁 Repository Structure
+
+```
+e22-co2060-hydro-risk-management/          ← Main orchestration repo
+│
+├──  README.md                           ← You are here
+├──  docker-compose.yml                  ← One-command full-stack launch
+├──  .env.example                        ← Environment variable template
+├──  LICENSE                             ← MIT License
+├──  CONTRIBUTING.md                     ← Contribution guide
+├──  SECURITY.md                         ← Security policy
+├──  CHANGELOG.md                        ← Version history
+│
+├──  .github/
+│   ├──  ISSUE_TEMPLATE/                 ← Bug report & feature request forms
+│   ├──  PULL_REQUEST_TEMPLATE.md        ← PR checklist
+│   └──  workflows/ci.yml               ← GitHub Actions CI pipeline
+│
+├──  docs/
+│   ├──  ARCHITECTURE.md                 ← Deep-dive system design & diagrams
+│   ├──  DEPLOYMENT.md                   ← Docker, manual & cloud deployment
+│   ├──  CONFIGURATION.md                ← All environment & config options
+│   ├──  API_REFERENCE.md               ← REST API documentation
+│   └──  PROJECT_GUIDE.md               ← Quick start & feature guide
+│
+├──  additional-files/
+│   ├──  SensorEmulator_*.zip            ← Windows MQTT test publisher
+│   └──  progress_report_generator.py   ← Utility script
+│
+│   ── Git Submodules (each an independent repo) ──────────────────
+│
+├──  mqtt-data-ingestion-service/        ← MQTT subscriber + TimescaleDB writer
+├──  metadata-handling-service/          ← Sites, Sensors, SensorTypes CRUD
+├──  disaster-management-alerting-service/ ← Threshold alert engine
+├──  report-generating-service/          ← PDF report generation
+├──  disaster-management-user-service/   ← Auth, JWT, RBAC
+├──  gis-monitoring-service/             ← GIS & telemetry read API
+└──  disaster-management-frontend/       ← React 19 dashboard (Vite + Nginx)
+```
+
+
+---
+
 ## 🗺️ Data Flow Explained
 
 ```mermaid
@@ -164,7 +207,6 @@ sequenceDiagram
 | [User/Auth Service](disaster-management-user-service/) | 8096 | Spring Boot 4, JWT, Spring Security, Redis | Authentication, JWT token management, and role-based access control |
 | [GIS Service](gis-monitoring-service/) | 8097 | Spring Boot 4, PostgreSQL | Read-only API serving sensor positions and telemetry for the map dashboard |
 | [Frontend](disaster-management-frontend/) | 8090 | React 19, Vite, Ant Design 5, Leaflet, Recharts | Interactive monitoring dashboard with GIS map and analytics |
-
 
 ---
 
