@@ -70,7 +70,6 @@ title: ATLAS – Adaptive Time-Series Analytics and Logging System
 6. [End Product](#end-product)
 7. [Conclusion](#conclusion)
 
-<br>
 
 ---
 
@@ -78,14 +77,16 @@ title: ATLAS – Adaptive Time-Series Analytics and Logging System
 
 **ATLAS (Adaptive Time-Series Analytics and Logging System)** is a **domain-agnostic monitoring and management platform** designed to be adapted by multiple government organizations.
 
-While the primary use case is **Integrated Hydro Risk Management**, the system is architected to support any domain requiring:
+While the primary use case is *Integrated Hydro Risk Management*, the system is architected to support any domain requiring:
 
 - Real-time measurements from field assets  
 - Historical data analytics  
 - Asset and infrastructure management  
 - Scalable monitoring and reporting systems  
 
-The platform connects **IoT field sensors → MQTT message broker → intelligent backend services → interactive GIS dashboard**, delivering a complete real-time situational awareness system for decision-makers and field operators.
+The platform connects 
+**IoT field sensors → MQTT message broker → intelligent backend services → interactive GIS dashboard**,
+delivering a complete real-time situational awareness system for decision-makers and field operators.
 
 ATLAS enables:
 
@@ -94,7 +95,8 @@ ATLAS enables:
 - Efficient asset and metadata management  
 - Scalable and modular system expansion  
 
-The **ATLAS (Adaptive Time-Series Analytics and Logging System)** is a full-stack, microservices-based monitoring platform engineered for **Integrated Hydro Risk Management**: with the architectural flexibility to serve **any domain** involving field sensors, real-time data, and risk alerting platform.
+The **ATLAS (Adaptive Time-Series Analytics and Logging System)** is a full-stack, microservices-based monitoring platform engineered for "Integrated Hydro Risk Management": with the architectural flexibility to serve any domain
+ involving field sensors, real-time data, and risk alerting platform.
 
 *Domains ATLAS can serve out-of-the-box:*
 
@@ -108,7 +110,7 @@ The **ATLAS (Adaptive Time-Series Analytics and Logging System)** is a full-stac
 | 🏭 Industrial | Pressure, Vibration, Temperature | Equipment fault detection |
 
 
-> Originally developed as the primary use case for **flood and hydrological risk monitoring** across Sri Lankan river systems, ATLAS is built to scale seamlessly into irrigation networks, power distribution, environmental monitoring, and smart city infrastructure.
+> Originally developed as the primary use case for *flood and hydrological risk monitoring* across Sri Lankan river systems, ATLAS is built to scale seamlessly into irrigation networks, power distribution, environmental monitoring, and smart city infrastructure.
 
 
 
@@ -145,6 +147,8 @@ The **ATLAS (Adaptive Time-Series Analytics and Logging System)** is a full-stac
 ## System Design
 
 ### Real-Time Data Flow
+
+
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'Inter, Segoe UI, sans-serif','actorBkg':'#dbeafe','actorBorder':'#2563eb','actorTextColor':'#1e3a8a','noteBkgColor':'#fef3c7','noteBorderColor':'#d97706','signalColor':'#475569'}}}%%
@@ -413,6 +417,15 @@ The alerting service implements a **4-level hierarchical severity model**, evalu
 | **Retention** | Resolved alerts older than 1 day are pruned |
 
 ### Security Architecture
+
+<div align="center">
+
+<img width="2902" height="788" alt="mermaid-diagram-2026-10-26-203306" src="https://github.com/user-attachments/assets/0fd8ed79-d7c0-4b68-93c9-af3fc828e8ca" />
+
+</div>
+
+[![](https://mermaid.ink/img/pako:eNqNVdtu2zgQ_RWCARY1aqe631AUSByjTRG3gRV3ga36QFNDW4gspRS1STbJd-37ftkOJUuOHQetHixZPHPOmRly9EB5mQKNqMjLW75iUpGLWSKTguBV1YulZDcrMr44n3y5-p7QcZ5BgRB2DzKhPzqgvsbb5VNZ3lY7AChS_fiC-GR-9QnjTmq1wsCMM5WVBfnvXzLHeBKD_DvjsCc0jzHi-fr7hXz34bJE64ERenvoz39q3_i7g74qr6Eg31iepY3kb1iNJ7Nv5-OJFr-UpQKuIO04qz3RqUZNQTFkZ-Qd-XgeH4K-KnX1dXbycYIcMVSVrsgfpHUcK6b26zGbnJ3H398kdAZpVj1L7zRn_DrPKpXQwWuaYzIafXhM6BtzQC7KZVYQLiHVvWA5Wn3EanfQedxhrQE54ZhKpauru2W6ZJ0VjfQMhIRqRVRjQa-RlN1rpvFBXXtAToFJ7GYToYHTXnLaSzqDrlugRTVM3zY4bWN03CC3PSXoo87VlvGFtjsgnV0mFFpwDPO1nL0BGa-AX28SW2xr-9h24KCC31S1rBWa-VlDCz9EHwy27SKsLe5bDHpWzOqgFM9ZVZ2BwIfm7Iksz6OjdAFMwLBSEiOjI8v1bFgMeZmXMjoywWYB2yyObrNUrSLr5u4FI8NT2fFxwcHv-UyP2Q7r-RzXttJf81XtCdhQChsCIXrK0LZt6CndwOSB_xuUqpRs2VMKSFO3pwTmBgbvKEO0bFoHKXdosXltKXffzuOh3mW6JrsLuEc3ie2-bzrVGdw55uo-h81I3RgHIbydWnBX7BXU3GbfEujR2eVtiFQ4fXjggWD8F-HdOOsomHCfOUiDhdPvn1cp2jHVF1_4kPYMIl0w33nBQId0KbOURgLnCwzpGuSa6f_0QVMnFD8Ea5xwET7iIKrvRk37EpoUTxh7w4q_ynJNIyVrjJZlvVz1XPWNHg9nGcMpuoXgwAM5LutC0cgK3IaDRg_0jkYj0zCOfdfyQtv0Pby59pDeI8w7Dh3D8HwrNC039D3vaUj_aXSN4zBwbDe0AzMIQ8dyvCHFsYtdnrbf0eZz-vQ_9Jpbjg?type=png)](https://mermaid.live/edit#pako:eNqNVdtu2zgQ_RWCARY1aqe631AUSByjTRG3gRV3ga36QFNDW4gspRS1STbJd-37ftkOJUuOHQetHixZPHPOmRly9EB5mQKNqMjLW75iUpGLWSKTguBV1YulZDcrMr44n3y5-p7QcZ5BgRB2DzKhPzqgvsbb5VNZ3lY7AChS_fiC-GR-9QnjTmq1wsCMM5WVBfnvXzLHeBKD_DvjsCc0jzHi-fr7hXz34bJE64ERenvoz39q3_i7g74qr6Eg31iepY3kb1iNJ7Nv5-OJFr-UpQKuIO04qz3RqUZNQTFkZ-Qd-XgeH4K-KnX1dXbycYIcMVSVrsgfpHUcK6b26zGbnJ3H398kdAZpVj1L7zRn_DrPKpXQwWuaYzIafXhM6BtzQC7KZVYQLiHVvWA5Wn3EanfQedxhrQE54ZhKpauru2W6ZJ0VjfQMhIRqRVRjQa-RlN1rpvFBXXtAToFJ7GYToYHTXnLaSzqDrlugRTVM3zY4bWN03CC3PSXoo87VlvGFtjsgnV0mFFpwDPO1nL0BGa-AX28SW2xr-9h24KCC31S1rBWa-VlDCz9EHwy27SKsLe5bDHpWzOqgFM9ZVZ2BwIfm7Iksz6OjdAFMwLBSEiOjI8v1bFgMeZmXMjoywWYB2yyObrNUrSLr5u4FI8NT2fFxwcHv-UyP2Q7r-RzXttJf81XtCdhQChsCIXrK0LZt6CndwOSB_xuUqpRs2VMKSFO3pwTmBgbvKEO0bFoHKXdosXltKXffzuOh3mW6JrsLuEc3ie2-bzrVGdw55uo-h81I3RgHIbydWnBX7BXU3GbfEujR2eVtiFQ4fXjggWD8F-HdOOsomHCfOUiDhdPvn1cp2jHVF1_4kPYMIl0w33nBQId0KbOURgLnCwzpGuSa6f_0QVMnFD8Ea5xwET7iIKrvRk37EpoUTxh7w4q_ynJNIyVrjJZlvVz1XPWNHg9nGcMpuoXgwAM5LutC0cgKzIaDRg_0jkYj0zCOfdfyQtv0Pby59pDeI8w7Dh3D8HwrNC039D3vaUj_aXSN4zBwbDe0AzMIQ8dyvCHFsYtdnrbf0eZz-vQ_8v5big)
+
 
 ```mermaid
 flowchart LR
