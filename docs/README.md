@@ -99,12 +99,12 @@ The **ATLAS (Adaptive Time-Series Analytics and Logging System)** is a full-stac
 
 *Domains ATLAS can serve out-of-the-box using different sensor sets:*
 
-**🌊 Hydro Risk Flood / drought alerts** : Water level, Rainfall, Flow rate
-**💧 Irrigation Water stress / overflow** : Soil moisture, Tank level, Flow
-**🌿 Environment  Pollution thresholds** : Air quality, CO2, PM2.5, Temperature
-**⚡ Power Grid outage / overload risk** : Voltage, Current, Load
-**🏙️ Smart City congestion / comfort** : Traffic density, Noise, Humidity
-**🏭 Industrial equipment fault detection** : Pressure, Vibration, Temperature
+- **🌊 Hydro Risk Flood / drought alerts** : Water level, Rainfall, Flow rate
+- **💧 Irrigation Water stress / overflow** : Soil moisture, Tank level, Flow
+- **🌿 Environment  Pollution thresholds** : Air quality, CO2, PM2.5, Temperature
+- **⚡ Power Grid outage / overload risk** : Voltage, Current, Load
+- **🏙️ Smart City congestion / comfort** : Traffic density, Noise, Humidity
+- **🏭 Industrial equipment fault detection** : Pressure, Vibration, Temperature
 
 
 > Originally developed as the primary use case for *flood and hydrological risk monitoring* across Sri Lankan river systems, ATLAS is built to scale seamlessly into irrigation networks, power distribution, environmental monitoring, and smart city infrastructure.
