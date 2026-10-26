@@ -61,7 +61,7 @@ title: ATLAS – Adaptive Time-Series Analytics and Logging System
 **Department of Computer Engineering, University of Peradeniya, Sri Lanka**
 
 
-#### Table of Contents
+### Table of Contents
 1. [Introduction](#introduction)
 2. [Live Dashboard Preview](#live-dashboard-preview)
 3. [System Design](#system-design)
@@ -415,15 +415,51 @@ The alerting service implements a **4-level hierarchical severity model**, evalu
 ### Security Architecture
 
 ```mermaid
-graph LR
-    C[Client Browser] -->|1 - Login| US[User Service :8096]
-    US -->|2 - JWT 15min + Refresh 1day| C
-    C -->|3 - Bearer token| MS[Metadata/GIS Services]
-    MS -->|4 - Validate JWT| JS[JwtService]
-    C -->|5 - Refresh on 401| US
-    US -->|6 - Check blacklist| REDIS[(Redis)]
-    C -->|7 - Logout| US
-    US -->|8 - Blacklist both tokens| REDIS
+flowchart LR
+    subgraph CLIENT["Client Layer"]
+        C["Client Browser"]
+    end
+
+    subgraph AUTH["Authentication · User Service"]
+        US["User Service<br/>Port 8096"]
+        JWT["JWT Service<br/>Token Validation"]
+    end
+
+    subgraph SERVICES["Protected Services"]
+        MS["Metadata / GIS Services"]
+    end
+
+    subgraph STORAGE["Session & Token State"]
+        REDIS[("Redis<br/>Token Blacklist")]
+    end
+
+    C -->|"① Login credentials"| US
+    US -->|"② Access JWT · 15 min<br/>Refresh token · 1 day"| C
+
+    C -->|"③ Bearer token"| MS
+    MS -->|"④ Validate JWT"| JWT
+    JWT -.->|"Validation result"| MS
+
+    C -->|"⑤ Refresh after 401"| US
+    US -->|"⑥ Check token blacklist"| REDIS
+
+    C -->|"⑦ Logout request"| US
+    US -->|"⑧ Blacklist access + refresh tokens"| REDIS
+
+    classDef client fill:#dbeafe,stroke:#2563eb,color:#1e3a8a,stroke-width:2px
+    classDef auth fill:#dcfce7,stroke:#16a34a,color:#14532d,stroke-width:2px
+    classDef service fill:#f3e8ff,stroke:#9333ea,color:#581c87,stroke-width:2px
+    classDef storage fill:#ffedd5,stroke:#ea580c,color:#9a3412,stroke-width:2px
+
+    class C client
+    class US,JWT auth
+    class MS service
+    class REDIS storage
+
+    style CLIENT fill:#eff6ff,stroke:#93c5fd,stroke-width:1px
+    style AUTH fill:#f0fdf4,stroke:#86efac,stroke-width:1px
+    style SERVICES fill:#faf5ff,stroke:#d8b4fe,stroke-width:1px
+    style STORAGE fill:#fff7ed,stroke:#fdba74,stroke-width:1px
 ```
 
 | Security Property | Implementation |
@@ -454,15 +490,15 @@ All services share the **`kernelx`** TimescaleDB database. Several tables are in
 
 ### Testing
 
-### Backend Testing
+#### Backend Testing
 - **Unit & Integration tests** via JUnit 5 and Testcontainers (Alerting Service)
 - **API endpoint testing** with Postman — validating CRUD operations, data validation, error handling, and JWT-protected routes
 
-### Frontend Testing
+#### Frontend Testing
 - **UI testing** in browser — verifying API integration, data rendering, and user interactions
 - **Mock data fallback** — ensures all pages load and function without backend dependencies
 
-### Results
+#### Results
 - ✅ Core functionalities operate correctly end-to-end
 - ✅ Alert engine correctly creates, escalates, and resolves alerts
 - ✅ JWT lifecycle (login → refresh → logout) operates with Redis blacklisting
