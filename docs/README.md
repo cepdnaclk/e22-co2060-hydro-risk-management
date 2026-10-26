@@ -8,8 +8,7 @@ title: ATLAS – Adaptive Time-Series Analytics and Logging System
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f4c75,50:1b6ca8,100:0f4c75&height=220&section=header&text=ATLAS&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Adaptive%20Time-Series%20Analytics%20and%20Logging%20System&descAlignY=62&descSize=20&animation=fadeIn" width="100%" alt="ATLAS — Adaptive Time-Series Analytics and Logging System" />
-
-<img width="900" height="531" alt="Image" src="https://github.com/user-attachments/assets/f277d23a-83e9-402c-bb13-f0f0df324c28" />
+<img width="100%" alt="Image" src="https://github.com/user-attachments/assets/f277d23a-83e9-402c-bb13-f0f0df324c28" />
 
 <br>
 
@@ -66,7 +65,7 @@ title: ATLAS – Adaptive Time-Series Analytics and Logging System
 2. [Live Dashboard Preview](#live-dashboard-preview)
 3. [System Design](#system-design)
 4. [System Architecture](#system-architecture)
-5. [Feature Deep Dive](#feature-deep-dive)
+5. [Feature Deep-Dives](#feature-deep-dives)
 6. [End Product](#end-product)
 7. [Conclusion](#conclusion)
 
@@ -98,16 +97,14 @@ ATLAS enables:
 The **ATLAS (Adaptive Time-Series Analytics and Logging System)** is a full-stack, microservices-based monitoring platform engineered for "Integrated Hydro Risk Management": with the architectural flexibility to serve any domain
  involving field sensors, real-time data, and risk alerting platform.
 
-*Domains ATLAS can serve out-of-the-box:*
+*Domains ATLAS can serve out-of-the-box using different sensor sets:*
 
-| Domain | Sensor Types | Alert Meaning |
-|--------|-------------|---------------|
-| 🌊 Hydro Risk | Water level, Rainfall, Flow rate | Flood / drought alerts |
-| 💧 Irrigation | Soil moisture, Tank level, Flow | Water stress / overflow |
-| 🌿 Environment | Air quality, CO2, PM2.5, Temperature | Pollution thresholds |
-| ⚡ Power Grid | Voltage, Current, Load | Outage / overload risk |
-| 🏙️ Smart City | Traffic density, Noise, Humidity | Congestion / comfort |
-| 🏭 Industrial | Pressure, Vibration, Temperature | Equipment fault detection |
+**🌊 Hydro Risk Flood / drought alerts** : Water level, Rainfall, Flow rate
+**💧 Irrigation Water stress / overflow** : Soil moisture, Tank level, Flow
+**🌿 Environment  Pollution thresholds** : Air quality, CO2, PM2.5, Temperature
+**⚡ Power Grid outage / overload risk** : Voltage, Current, Load
+**🏙️ Smart City congestion / comfort** : Traffic density, Noise, Humidity
+**🏭 Industrial equipment fault detection** : Pressure, Vibration, Temperature
 
 
 > Originally developed as the primary use case for *flood and hydrological risk monitoring* across Sri Lankan river systems, ATLAS is built to scale seamlessly into irrigation networks, power distribution, environmental monitoring, and smart city infrastructure.
@@ -121,7 +118,13 @@ The **ATLAS (Adaptive Time-Series Analytics and Logging System)** is a full-stac
 
 <div align="center">
 
-![ATLAS Dashboard in Action](images/ATLAS_Dashboard.gif)
+<p align="center">
+  <img
+    src="https://github.com/cepdnaclk/e22-co2060-hydro-risk-management/blob/main/docs/images/ATLAS_Dashboard.gif"
+    alt="Hydro Risk Management Project Demo"
+    width="90%"
+  />
+</p>
 
 *Real-time GIS mapping, telemetry analytics, and intelligent alert management - all in one platform*
 
@@ -148,44 +151,9 @@ The **ATLAS (Adaptive Time-Series Analytics and Logging System)** is a full-stac
 
 ### Real-Time Data Flow
 
+[![](https://mermaid.ink/img/pako:eNp9Vdtu2zgQ_ZWBFoFTVE5syzfpoYAdy1lh0zSJ3TwsDCwoaWwTkUiXpNx4Db_uB_QT-yU7lCxvtvWuHiSKc-Zw5gw53DuJTNEJnIuLPRfcBLBvmDXm2AgaMdPYcKvfZ6Y4izPUjWDfWEphpizn2Y5QkTCoXJjhSiJ8jlzQTOimRsWX5MwSI9X4ZUXAX9IY2RJPk1KlqOx8p9f3MK7n5_hqbmQmS1MbPTZkZBLSINGcDEtcesmgNpRUJ1vqDwatPtk0XwmWnea7g16v7zcOh8PFxUIthMYvBYoEJ5ytFMvtFNDDCiNFkceo6pkNU4YnfMOEoTyFlgqYhinHLD3-n0N-fJzPLa78jpV8OU8YiRVqY4HViEtBpGrLEzwHn4wtdM5z1AnLcDI-BxplqErKahCKFRdn2aahRU2YXseSqdRCapjCxIBaxZedbsuFTs-jV7f7rjbfk-4gt6iOCriTcQDR_W04m0ef7uEhegjvovuwhleg5ocPVo0AHoo443oN-xRtolHqwpZlBbpgbGaG5RsXYmZoa-0ONYd1JYZKpgBmRawTxWMEEiKLWfICl49yBu1TjBXyjcszy3jKKPD3EBfLJQXPBdxIkRRKoTCPBRb4c4K195iZZA3LrKDAkQw7GILGRIpU_7SiVUOzLY6y7DK2fu_g-1_f3tYN1rsNFcceqtobxX9UoNe14nfK15kKlFUuCzC6C5_mED6P7j6PbB1qbCblBsIy5jbkXBTkepkoKU5s9il5jsGTFgTWZdn-UMhSLlbaypUx2q3tVpNY4CsXqfx6jqL8BqRtTtsNycnYTX7kga0-MoNZK9Rrmf0j4Y-B3JATRXsNoRWuGj6hltkWgVmc_kG-_1fSOyk5PKPkNCxlvIueQ5iMZr-OP42eJnBpW0JT4dLGCl5Lnzyn4THK23AO11VO2oVrgxk1TaN211XmTdqhNF3Fe019jm9PVZ-Mm0QyDQNKyxSKFCZjrc_7KkegXcv-tWiFF9T34DaaQc7owCRrOtq0_G8PEZ0Jlb5VxnGdleKpEyxZptF1clQ5s__O3mIWTtnmF05AQ4Vp8dpMbN9cOAtxIF_qFr9LmTuBUXRKHSWL1frEVWzsoTq20ROkDO5GFsI4QcdvlRxOsHdenaDZbrWuBr1O3_fagz59qCzOjmD9K7_bavUHHb_d6fmDfv_gOn-W67au_GHX6_nesO35_tDr-66DKacL42N1gZX32OFv2DEx_w?type=png)](https://mermaid.live/edit#pako:eNp9Vdtu20YQ_ZUBC0MKQln3Gx8CSBblEnUc21L8UAgoluRIWpjcVXaXilVBr_2AfGK-pLOkyLqJWj6Qy5kzhzNndodHJ5IxOp5zdXXkghsPjjWzxRRrXi1kGmtu8frMFGdhgrrmHWtrKcycpTw5ECoQBpULC9xIhM-BC5oJ3dCo-JqCWWSkmr5sCPhLHCJbY2WUKkZl7Z3-oIthaV_iq7mRicxdbeyyESOXkAaJpnKscd2NhqUjp6p88Xg4bA3Ip_lGsKSy94b9_mBcO51OV1crtRIav2QoIpxxtlEstSagi2VGiiwNUZWWHVOGR3zHhKE6hZYKmIY5xyQ-v19CfnxcLi0uf06VfLlMGIgNamOBxYpLQaRqzyO8BJ9NLXTJU9QRS3A2vQSaJKhyymLhiw0XF9nmvkXNmN6GkqnYQkqYwsiA2oT1Tq_lQqffpVuv965035PuIPeozgq4s6kHwf2tv1gGn-7hIXjw74J7v4QXoMaHD1YNDx6yMOF6C8cYbaFB7MKeJRm6YGxlhqU7F0JmaGsdTiWHDSWGQiYPFlmoI8VDBBIiCVn0AvVHuYB2lWOBfBPyzBIeM0r8PYTZek3JcwE3UkSZUijMY4YZ_lxgGT1lJtrCOskocSTHAUagMZIi1j990aqh2R4nSVIPbdw7-P7Xt7d9g-1hR82xh6qMRvEfHej3rPid_HahA3mX8wZM7vynJfjPk7vPE9uHEptIuQM_z7kNKRcZhdYjJUXFZq-c55w8aUFgnbftD4Us5mKjrVwJo93abjWIBb5yEcuvlyjyp0faprTdkIKM3eRnHtjrMzOYrUK9lck_Ev6YyA0FUbZN8K1wxfIJtUz2CMzi9A_y_b-S3UrJ0QUl534u413w7MNssvh1-mnyNIO6HQkNhWubK3Rbuoqc--csb_0lNIuatAtNgwkNTaMOzaLyBu1QMhf5NmnO8X3V9dm0QSRz36OyTKZIYXKW-rwvagTatexfHy3wguYe3AYLSBkdmGhLR5s-_9tDQGdCxW-VcVxno3jseGuWaHSdFFXK7LtztJiVk4_5lePRUmGcvTYiOzdXzkqcKJamxe9Spo5nFJ1SR8lss624sp09VOcxWllVnt2NzIRxvM6on5M43tF5dbxGu9W6HvY7g3G3PRzQg_riHAg2uB73Wq3BsDNud_rj4WBwcp0_8w-3rsejXrc_7o7ao_G41-kNXAdjTn-Mj8UfLP-Rnf4GDvQySQ)
 
 
-```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'Inter, Segoe UI, sans-serif','actorBkg':'#dbeafe','actorBorder':'#2563eb','actorTextColor':'#1e3a8a','noteBkgColor':'#fef3c7','noteBorderColor':'#d97706','signalColor':'#475569'}}}%%
-sequenceDiagram
-    autonumber
-    participant Sensor as Field Sensor
-    participant MQTT as MQTT Broker
-    participant Ingest as Ingestion Service
-    participant DB as TimescaleDB
-    participant Alert as Alert Engine
-    participant FE as Dashboard
-
-    rect rgb(240, 253, 244)
-    Note over Sensor,DB: INGESTION PIPELINE
-    Sensor->>MQTT: Publish {deviceId, value, timestamp, battery}
-    MQTT->>Ingest: Subscribe callback (QoS 1)
-    Ingest->>Ingest: Validate + buffer in ConcurrentQueue
-    Note over Ingest: Batch flush every 8 seconds
-    Ingest->>DB: saveAll(batch) → TimescaleDB hypertable
-    end
-
-    rect rgb(254, 242, 242)
-    Note over Alert,DB: ALERT EVALUATION
-    loop Every 1 minute (cron)
-        Alert->>DB: Query sensor_readings in last 10-min window
-        Alert->>Alert: Compare latest reading vs sensor thresholds
-        Alert->>DB: Create / Escalate / Resolve alerts
-    end
-    end
-
-    rect rgb(253, 242, 248)
-    Note over FE,DB: LIVE DASHBOARD (auto-refresh 30s)
-    FE->>DB: GET /sensors, /telemetry/latest-all, /alerts/active
-    DB-->>FE: Return live sensor + alert data
-    FE->>FE: Render GIS map, charts, KPI cards
-    end
-```
 
 <br>
 
@@ -265,7 +233,6 @@ sequenceDiagram
 ---
 
 
-
 ## System Architecture
 
 The platform follows a clean microservices topology with a shared TimescaleDB at the core, fronted by a React 19 SPA served through Nginx.
@@ -284,70 +251,9 @@ The platform follows a clean microservices topology with a shared TimescaleDB at
 
 <br>
 
+<img width="100%" alt="ATLAS System Architecture Diagram" src="https://github.com/user-attachments/assets/1884f50b-6fda-4d0f-bcaa-345aff1569db" />
 
-```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'Inter, Segoe UI, sans-serif','primaryColor':'#e0f2fe','primaryBorderColor':'#0284c7','lineColor':'#64748b','fontSize':'14px'}}}%%
-graph TB
-    subgraph SRC["📡 DATA SOURCES"]
-        direction LR
-        S1[" Temperature<br/>Sensor"]
-        S2[" Water Level<br/>Sensor"]
-        S3[" Rainfall<br/>Sensor"]
-        S4[" Wind Speed<br/>Sensor"]
-        EMU[" Sensor Emulator<br/>Windows / Python"]
-    end
-
-    subgraph BRK["☁️ MESSAGE BROKER"]
-        MQTT[" MQTT Broker<br/>broker.hivemq.com"]
-    end
-
-    subgraph SVC["⚙️ BACKEND MICROSERVICES"]
-        direction LR
-        MS1[" MQTT Ingestion<br/><b>:8091</b><br/>Paho · Batch Write"]
-        MS2[" Metadata<br/><b>:8092</b><br/>Sites · Sensors · Types"]
-        MS3[" Alerting<br/><b>:8093</b><br/>Threshold Engine · Cron"]
-        MS4[" Report<br/><b>:8094</b><br/>PDF · iText"]
-        MS5[" User Auth<br/><b>:8096</b><br/>JWT · RBAC"]
-        MS6[" GIS<br/><b>:8097</b><br/>Map Data · Telemetry"]
-    end
-
-    subgraph DAT["🗄️ DATA LAYER"]
-        direction LR
-        DB[(" TimescaleDB<br/>PostgreSQL :5432<br/>kernelx database")]
-        REDIS[(" Redis Cache<br/>:6379<br/>Token Blacklist")]
-    end
-
-    subgraph FRT[" FRONTEND"]
-        FE["⚛️ React 19 Dashboard<br/><b>:8090</b><br/>Ant Design · Leaflet · Recharts"]
-    end
-
-    S1 & S2 & S3 & S4 & EMU -->|" Publish"| MQTT
-    MQTT -->|" Subscribe"| MS1
-    MS1 & MS2 & MS3 & MS4 & MS5 & MS6 <-->|"JPA / SQL"| DB
-    MS5 & MS2 <-->|"Token Blacklist"| REDIS
-    FE -->|"REST API"| MS2 & MS3 & MS4 & MS5 & MS6
-
-    classDef sensor fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
-    classDef broker fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f
-    classDef service fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
-    classDef alert fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d
-    classDef data fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#4c1d95
-    classDef front fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#831843
-
-    class S1,S2,S3,S4,EMU sensor
-    class MQTT broker
-    class MS1,MS2,MS4,MS5,MS6 service
-    class MS3 alert
-    class DB,REDIS data
-    class FE front
-
-    style SRC fill:#f0fdf4,stroke:#16a34a,stroke-dasharray: 5 5
-    style BRK fill:#fffbeb,stroke:#d97706,stroke-dasharray: 5 5
-    style SVC fill:#eff6ff,stroke:#2563eb,stroke-dasharray: 5 5
-    style DAT fill:#f5f3ff,stroke:#7c3aed,stroke-dasharray: 5 5
-    style FRT fill:#fdf2f8,stroke:#db2777,stroke-dasharray: 5 5
-```
-
+<br>
 <div align="center">
 
 *ATLAS System Architecture Diagram*
@@ -373,14 +279,12 @@ graph TB
 
 
 
-
-
-
 ---
-
+<br>
 
 
 ## Feature Deep-Dives
+<br>
 
 ### GIS Map Dashboard
 
@@ -392,6 +296,7 @@ The interactive map provides **real-time spatial awareness** of all deployed fie
 - **Sensor search autocomplete** with smooth fly-to animation on selection
 - **Per-sensor detail drawer** with historical telemetry charts (1h / 24h / 7d / 30d time ranges)
 - **Mock data fallback** the dashboard is fully demonstrable without backend connectivity
+<br>
 
 ### Analytics Dashboard
 
@@ -403,86 +308,35 @@ A comprehensive operational intelligence view:
 - **Threshold Breakdown Donut** — proportion of sensors in each severity band
 - **Searchable Sensor Table** — filterable and sortable, with per-row trend drawer
 - **Auto-refresh every 30 seconds** — always showing the latest state without manual reload
+<br>
 
 ### Alert Engine
 
 The alerting service implements a **4-level hierarchical severity model**, evaluated every minute using a sliding 10-minute window:
 
-| Behaviour | Description |
-|-----------|-------------|
-| **Auto-create** | New alert raised when threshold is first crossed |
-| **Escalation** | Severity upgraded if conditions worsen |
-| **De-escalation** | Severity downgraded if conditions improve |
-| **Auto-resolve** | Alert closed automatically when sensor returns to normal |
-| **Retention** | Resolved alerts older than 1 day are pruned |
+- **Auto-create** - New alert raised when threshold is first crossed 
+- **Escalation** - Severity upgraded if conditions worsen 
+- **De-escalation** - Severity downgraded if conditions improve 
+- **Auto-resolve** - Alert closed automatically when sensor returns to normal 
+- **Retention** - Resolved alerts older than 1 day are pruned 
+
+<br>
 
 ### Security Architecture
 
-<div align="center">
-
-<img width="2902" height="788" alt="mermaid-diagram-2026-10-26-203306" src="https://github.com/user-attachments/assets/0fd8ed79-d7c0-4b68-93c9-af3fc828e8ca" />
-
-</div>
 
 [![](https://mermaid.ink/img/pako:eNqNVdtu2zgQ_RWCARY1aqe631AUSByjTRG3gRV3ga36QFNDW4gspRS1STbJd-37ftkOJUuOHQetHixZPHPOmRly9EB5mQKNqMjLW75iUpGLWSKTguBV1YulZDcrMr44n3y5-p7QcZ5BgRB2DzKhPzqgvsbb5VNZ3lY7AChS_fiC-GR-9QnjTmq1wsCMM5WVBfnvXzLHeBKD_DvjsCc0jzHi-fr7hXz34bJE64ERenvoz39q3_i7g74qr6Eg31iepY3kb1iNJ7Nv5-OJFr-UpQKuIO04qz3RqUZNQTFkZ-Qd-XgeH4K-KnX1dXbycYIcMVSVrsgfpHUcK6b26zGbnJ3H398kdAZpVj1L7zRn_DrPKpXQwWuaYzIafXhM6BtzQC7KZVYQLiHVvWA5Wn3EanfQedxhrQE54ZhKpauru2W6ZJ0VjfQMhIRqRVRjQa-RlN1rpvFBXXtAToFJ7GYToYHTXnLaSzqDrlugRTVM3zY4bWN03CC3PSXoo87VlvGFtjsgnV0mFFpwDPO1nL0BGa-AX28SW2xr-9h24KCC31S1rBWa-VlDCz9EHwy27SKsLe5bDHpWzOqgFM9ZVZ2BwIfm7Iksz6OjdAFMwLBSEiOjI8v1bFgMeZmXMjoywWYB2yyObrNUrSLr5u4FI8NT2fFxwcHv-UyP2Q7r-RzXttJf81XtCdhQChsCIXrK0LZt6CndwOSB_xuUqpRs2VMKSFO3pwTmBgbvKEO0bFoHKXdosXltKXffzuOh3mW6JrsLuEc3ie2-bzrVGdw55uo-h81I3RgHIbydWnBX7BXU3GbfEujR2eVtiFQ4fXjggWD8F-HdOOsomHCfOUiDhdPvn1cp2jHVF1_4kPYMIl0w33nBQId0KbOURgLnCwzpGuSa6f_0QVMnFD8Ea5xwET7iIKrvRk37EpoUTxh7w4q_ynJNIyVrjJZlvVz1XPWNHg9nGcMpuoXgwAM5LutC0cgK3IaDRg_0jkYj0zCOfdfyQtv0Pby59pDeI8w7Dh3D8HwrNC039D3vaUj_aXSN4zBwbDe0AzMIQ8dyvCHFsYtdnrbf0eZz-vQ_9Jpbjg?type=png)](https://mermaid.live/edit#pako:eNqNVdtu2zgQ_RWCARY1aqe631AUSByjTRG3gRV3ga36QFNDW4gspRS1STbJd-37ftkOJUuOHQetHixZPHPOmRly9EB5mQKNqMjLW75iUpGLWSKTguBV1YulZDcrMr44n3y5-p7QcZ5BgRB2DzKhPzqgvsbb5VNZ3lY7AChS_fiC-GR-9QnjTmq1wsCMM5WVBfnvXzLHeBKD_DvjsCc0jzHi-fr7hXz34bJE64ERenvoz39q3_i7g74qr6Eg31iepY3kb1iNJ7Nv5-OJFr-UpQKuIO04qz3RqUZNQTFkZ-Qd-XgeH4K-KnX1dXbycYIcMVSVrsgfpHUcK6b26zGbnJ3H398kdAZpVj1L7zRn_DrPKpXQwWuaYzIafXhM6BtzQC7KZVYQLiHVvWA5Wn3EanfQedxhrQE54ZhKpauru2W6ZJ0VjfQMhIRqRVRjQa-RlN1rpvFBXXtAToFJ7GYToYHTXnLaSzqDrlugRTVM3zY4bWN03CC3PSXoo87VlvGFtjsgnV0mFFpwDPO1nL0BGa-AX28SW2xr-9h24KCC31S1rBWa-VlDCz9EHwy27SKsLe5bDHpWzOqgFM9ZVZ2BwIfm7Iksz6OjdAFMwLBSEiOjI8v1bFgMeZmXMjoywWYB2yyObrNUrSLr5u4FI8NT2fFxwcHv-UyP2Q7r-RzXttJf81XtCdhQChsCIXrK0LZt6CndwOSB_xuUqpRs2VMKSFO3pwTmBgbvKEO0bFoHKXdosXltKXffzuOh3mW6JrsLuEc3ie2-bzrVGdw55uo-h81I3RgHIbydWnBX7BXU3GbfEujR2eVtiFQ4fXjggWD8F-HdOOsomHCfOUiDhdPvn1cp2jHVF1_4kPYMIl0w33nBQId0KbOURgLnCwzpGuSa6f_0QVMnFD8Ea5xwET7iIKrvRk37EpoUTxh7w4q_ynJNIyVrjJZlvVz1XPWNHg9nGcMpuoXgwAM5LutC0cgKzIaDRg_0jkYj0zCOfdfyQtv0Pby59pDeI8w7Dh3D8HwrNC039D3vaUj_aXSN4zBwbDe0AzMIQ8dyvCHFsYtdnrbf0eZz-vQ_8v5big)
 
 
-```mermaid
-flowchart LR
-    subgraph CLIENT["Client Layer"]
-        C["Client Browser"]
-    end
+Security properties and method of implementations are as below:
 
-    subgraph AUTH["Authentication · User Service"]
-        US["User Service<br/>Port 8096"]
-        JWT["JWT Service<br/>Token Validation"]
-    end
+- **Short-lived access tokens** - 15-minute JWT (limits blast radius of token theft)
+- **HttpOnly refresh cookie** - Inaccessible to JavaScript (XSS-safe)
+- **Redis token blacklist** - Immediate revocation on logout or token rotation
+- **Role-Based Access Control** - `ADMIN` and `USER` roles gated at both frontend and backend
+- **Auto token refresh** - Axios interceptors transparently refresh tokens on `401`
 
-    subgraph SERVICES["Protected Services"]
-        MS["Metadata / GIS Services"]
-    end
-
-    subgraph STORAGE["Session & Token State"]
-        REDIS[("Redis<br/>Token Blacklist")]
-    end
-
-    C -->|"① Login credentials"| US
-    US -->|"② Access JWT · 15 min<br/>Refresh token · 1 day"| C
-
-    C -->|"③ Bearer token"| MS
-    MS -->|"④ Validate JWT"| JWT
-    JWT -.->|"Validation result"| MS
-
-    C -->|"⑤ Refresh after 401"| US
-    US -->|"⑥ Check token blacklist"| REDIS
-
-    C -->|"⑦ Logout request"| US
-    US -->|"⑧ Blacklist access + refresh tokens"| REDIS
-
-    classDef client fill:#dbeafe,stroke:#2563eb,color:#1e3a8a,stroke-width:2px
-    classDef auth fill:#dcfce7,stroke:#16a34a,color:#14532d,stroke-width:2px
-    classDef service fill:#f3e8ff,stroke:#9333ea,color:#581c87,stroke-width:2px
-    classDef storage fill:#ffedd5,stroke:#ea580c,color:#9a3412,stroke-width:2px
-
-    class C client
-    class US,JWT auth
-    class MS service
-    class REDIS storage
-
-    style CLIENT fill:#eff6ff,stroke:#93c5fd,stroke-width:1px
-    style AUTH fill:#f0fdf4,stroke:#86efac,stroke-width:1px
-    style SERVICES fill:#faf5ff,stroke:#d8b4fe,stroke-width:1px
-    style STORAGE fill:#fff7ed,stroke:#fdba74,stroke-width:1px
-```
-
-| Security Property | Implementation |
-|-------------------|----------------|
-| Short-lived access tokens | 15-minute JWT — limits blast radius of token theft |
-| HttpOnly refresh cookie | Inaccessible to JavaScript — XSS-safe |
-| Redis token blacklist | Immediate revocation on logout or token rotation |
-| Role-Based Access Control | `ADMIN` and `USER` roles — gated at both frontend and backend |
-| Auto token refresh | Axios interceptors transparently refresh tokens on `401` |
-
+<br>
 
 ### Database Design
 
@@ -498,40 +352,49 @@ All services share the **`kernelx`** TimescaleDB database. Several tables are in
 
 ---
 
-
 ## End Product
+
+<br>
 
 ### Testing
 
-#### Backend Testing
-- **Unit & Integration tests** via JUnit 5 and Testcontainers (Alerting Service)
-- **API endpoint testing** with Postman — validating CRUD operations, data validation, error handling, and JWT-protected routes
+- Backend Testing
+  - **Unit & Integration tests** via JUnit 5 and Testcontainers (Alerting Service)
+  - **API endpoint testing** with Postman — validating CRUD operations, data validation, error handling, and JWT-protected routes
 
-#### Frontend Testing
-- **UI testing** in browser — verifying API integration, data rendering, and user interactions
-- **Mock data fallback** — ensures all pages load and function without backend dependencies
+- Frontend Testing
+  - **UI testing** in browser — verifying API integration, data rendering, and user interactions
+  - **Mock data fallback** — ensures all pages load and function without backend dependencies
 
-#### Results
-- ✅ Core functionalities operate correctly end-to-end
-- ✅ Alert engine correctly creates, escalates, and resolves alerts
-- ✅ JWT lifecycle (login → refresh → logout) operates with Redis blacklisting
-- ✅ PDF report generation produces correct downloadable files
-- ✅ System maintains data consistency across services
+- Results
+  - ✅ Core functionalities operate correctly end-to-end
+  - ✅ Alert engine correctly creates, escalates, and resolves alerts
+  - ✅ JWT lifecycle (login → refresh → logout) operates with Redis blacklisting
+  - ✅ PDF report generation produces correct downloadable files
+  - ✅ System maintains data consistency across services
 
 
 
 ### Deployment Options
 
-| Method | Best For | Command |
-|--------|----------|---------|
-| **Docker Compose** | Quick start, development, demo | `docker compose up --build -d` |
-| **Manual / Dev Mode** | Active development of individual services | `./mvnw spring-boot:run` + `npm run dev` |
-| **AWS EC2 + RDS** | Cloud production | See [DEPLOYMENT.md](DEPLOYMENT.md) |
-| **Docker Swarm** | On-premise distributed | `docker stack deploy -c docker-compose.yml atlas` |
-| **GKE / Kubernetes** | Enterprise-scale | Community contribution — see discussions |
+
+- For Quick start, development, demo:
+  - **Docker Compose** :`docker compose up --build -d`
+
+- Active development of individual services
+  - **Manual / Dev Mode** : `./mvnw spring-boot:run` + `npm run dev`
+
+-  Cloud production
+  - **AWS EC2 + RDS** : See [DEPLOYMENT.md](DEPLOYMENT.md)
+  
+-  On-premise distributed
+  - **Docker Swarm** : `docker stack deploy -c docker-compose.yml atlas`
+
+-  Enterprise-scale
+  - **GKE / Kubernetes** : Community contribution (see discussions)
+
 
 ---
-
 
 
 
@@ -558,13 +421,13 @@ ATLAS successfully demonstrates a **scalable, modular, and domain-independent mo
 
 > **v1.0.0** is released and stable. Planned for future versions:
 
-- [ ] **WebSocket push notifications** — eliminate polling, push alerts to clients in real-time
-- [ ] **API Gateway** — centralized routing via Nginx / Spring Cloud Gateway
-- [ ] **Kubernetes manifests** — Helm chart for enterprise deployments
-- [ ] **TimescaleDB continuous aggregates** — efficient long-term analytics
-- [ ] **Email / SMS alert notifications** — PagerDuty / Twilio integrations
-- [ ] **Multi-language (i18n)** dashboard support
-- [ ] **Prometheus + Grafana** metrics stack
+- [ ] *WebSocket push notifications* — eliminate polling, push alerts to clients in real-time
+- [ ] *API Gateway* — centralized routing via Nginx / Spring Cloud Gateway
+- [ ] *Kubernetes manifests* — Helm chart for enterprise deployments
+- [ ] *TimescaleDB continuous aggregates* — efficient long-term analytics
+- [ ] *Email / SMS alert notifications* — PagerDuty / Twilio integrations
+- [ ] *Multi-language (i18n)* dashboard support
+- [ ] *Prometheus + Grafana* metrics stack
 
 
 
@@ -581,10 +444,10 @@ ATLAS successfully demonstrates a **scalable, modular, and domain-independent mo
 
 <div align="center">
 
-[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/cepdnaclk/e22-co2060-hydro-risk-management)
-[![Project Page](https://img.shields.io/badge/Project-Page-0f4c75?style=for-the-badge&logo=github-pages&logoColor=white)](https://cepdnaclk.github.io/e22-co2060-hydro-risk-management/)
-[![Department](https://img.shields.io/badge/Computer_Engineering-UoP-8B0000?style=for-the-badge)](http://www.ce.pdn.ac.lk/)
-[![University](https://img.shields.io/badge/University_of_Peradeniya-Sri_Lanka-006400?style=for-the-badge)](https://eng.pdn.ac.lk/)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-64748B?style=for-the-badge&logo=github)](https://github.com/cepdnaclk/e22-co2060-hydro-risk-management)
+[![Project Page](https://img.shields.io/badge/Project-Page-11669e?style=for-the-badge&logo=github-pages&logoColor=white)](https://cepdnaclk.github.io/e22-co2060-hydro-risk-management/)
+[![Department](https://img.shields.io/badge/Computer_Engineering-UoP-bd0000?style=for-the-badge)](http://www.ce.pdn.ac.lk/)
+[![University](https://img.shields.io/badge/University_of_Peradeniya-Sri_Lanka-09b309?style=for-the-badge)](https://eng.pdn.ac.lk/)
 
 </div>
 
