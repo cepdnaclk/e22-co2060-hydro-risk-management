@@ -1,3 +1,10 @@
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f4c75,50:1b6ca8,100:0f4c75&height=220&section=header&text=ATLAS&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Adaptive%20Time-Series%20Analytics%20and%20Logging%20System&descAlignY=62&descSize=20&animation=fadeIn" width="100%" alt="ATLAS — Adaptive Time-Series Analytics and Logging System" />
+</div>
+
+
+
 # 🌍 ATLAS – Adaptive Time-Series Analytics and Logging System
 ### Domain‑Agnostic Government Monitoring Platform
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -6,6 +13,7 @@
 ![MQTT](https://img.shields.io/badge/MQTT-3C52F0?style=for-the-badge&logo=mqtt&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+
 <p align="center">
   <img width="800" height="500" alt="readme image" src="https://github.com/user-attachments/assets/e8e19beb-3360-48b2-b968-06bea651055e" />
 </p>
@@ -116,8 +124,7 @@ e22-co2060-hydro-risk-management/          ← Main orchestration repo
 │   └──  PROJECT_GUIDE.md               ← Quick start & feature guide
 │
 ├──  additional-files/
-│   ├──  SensorEmulator_*.zip            ← Windows MQTT test publisher
-│   └──  progress_report_generator.py   ← Utility script
+│   └──  SensorEmulator_*.zip            ← Windows MQTT test publisher
 │
 │   ── Git Submodules (each an independent repo) ──────────────────
 │
@@ -218,7 +225,7 @@ graph TB
 
 ### Tech Stack
 
-<div align="center">
+<div>
 
 <table>
 <thead>
@@ -362,6 +369,52 @@ graph TB
 </td>
 </tr>
 </table>
+
+---
+
+## ⚡ Quick Start
+
+Get the full platform running locally in under 5 minutes:
+
+```bash
+# 1. Clone with all submodules
+git clone --recurse-submodules https://github.com/cepdnaclk/e22-co2060-hydro-risk-management.git
+cd e22-co2060-hydro-risk-management
+
+# 2. Configure your environment
+cp .env.example .env
+# Edit .env: set POSTGRES_PASSWORD, JWT_SECRET, ADMIN_PASSWORD
+
+# 3. Launch the entire 9-container stack
+docker compose up --build -d
+
+# 4. Open the dashboard
+# http://localhost:8090  →  Login: admin / admin123
+```
+
+> **First boot:** Takes ~3–5 minutes while TimescaleDB initializes and Spring Boot services start. Services auto-retry connections.
+
+### Access Points
+
+| Service | URL | Notes |
+|---------|-----|-------|
+| 🌐 **Dashboard** | http://localhost:8090 | `admin` / `admin123` |
+| 📋 **Metadata API Swagger** | http://localhost:8092/swagger-ui.html | Interactive API docs |
+| 👤 **Auth API Swagger** | http://localhost:8096/swagger-ui.html | Interactive API docs |
+
+
+---
+
+## 📖 Documentation Index
+
+| Document | Description |
+|----------|-------------|
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Deep-dive system design — service internals, DB schema, security flows, design decisions |
+| [DEPLOYMENT.md](DEPLOYMENT.md) | Docker Compose, manual, cloud (AWS, GKE, Swarm), production checklist |
+| [API_REFERENCE.md](API_REFERENCE.md) | Complete REST API docs for all 6 backend services with request/response examples |
+| [CONFIGURATION.md](CONFIGURATION.md) | All environment variables, application.yml options, and config reference |
+| [PROJECT_GUIDE.md](PROJECT_GUIDE.md) | Quick-start guide, alert system explained, domain adaptation steps |
+| [SECURITY.md](SECURITY.md) | Security policy, production hardening checklist, responsible disclosure |
 
 ---
 

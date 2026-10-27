@@ -251,10 +251,10 @@ The platform follows a clean microservices topology with a shared TimescaleDB at
 
 <br>
 
-<img width="100%" alt="ATLAS System Architecture Diagram" src="https://github.com/user-attachments/assets/1884f50b-6fda-4d0f-bcaa-345aff1569db" />
+<div align="center">
+<img width="80%" alt="ATLAS System Architecture Diagram" src="https://github.com/user-attachments/assets/1884f50b-6fda-4d0f-bcaa-345aff1569db" />
 
 <br>
-<div align="center">
 
 *ATLAS System Architecture Diagram*
 </div>
@@ -280,7 +280,6 @@ The platform follows a clean microservices topology with a shared TimescaleDB at
 
 
 ---
-<br>
 
 
 ## Feature Deep-Dives
@@ -384,13 +383,13 @@ All services share the **`kernelx`** TimescaleDB database. Several tables are in
 - Active development of individual services
   - **Manual / Dev Mode** : `./mvnw spring-boot:run` + `npm run dev`
 
--  Cloud production
+- Cloud production
   - **AWS EC2 + RDS** : See [DEPLOYMENT.md](DEPLOYMENT.md)
   
--  On-premise distributed
+- On-premise distributed
   - **Docker Swarm** : `docker stack deploy -c docker-compose.yml atlas`
 
--  Enterprise-scale
+- Enterprise-scale
   - **GKE / Kubernetes** : Community contribution (see discussions)
 
 
