@@ -1,9 +1,10 @@
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f4c75,50:1b6ca8,100:0f4c75&height=220&section=header&text=ATLAS&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Adaptive%20Time-Series%20Analytics%20and%20Logging%20System&descAlignY=62&descSize=20&animation=fadeIn" width="100%" alt="ATLAS — Adaptive Time-Series Analytics and Logging System" />
-</div>
+
 # 🌍 ATLAS – Adaptive Time-Series Analytics and Logging System
 ### Domain‑Agnostic Government Monitoring Platform
+
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
@@ -11,9 +12,9 @@
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
-<p align="center">
   <img width="800" height="500" alt="readme image" src="https://github.com/user-attachments/assets/e8e19beb-3360-48b2-b968-06bea651055e" />
-</p>
+
+</div>
 
 **ATLAS** is a domain‑agnostic monitoring and management platform designed to be adapted by multiple government organizations. While the primary use case is **Integrated Hydro Risk Management**, the system is architected to support any domain requiring real-time measurements, historical analytics, and asset management.
 
